@@ -1,10 +1,52 @@
-/* Placeholders */
+main {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+}
+
+section {
+  padding:3em 1em 1em;
+	width:100%;
+	height: 100vh;	
+	background: rgb(165, 103, 103);	
+	display: none;
+  transition: 1s;
+  margin-top: 50px;
+
+  
+}
+ 
+ 
+section:target {
+  display: block;
+ 
+}
+
+.navigation {
+  opacity: 0.8;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  clear: both;
+}
+.navigation > div  a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  transition: 1s;
+}
+.navigation :hover a{
+  background-color: burlywood;
+}
 body {
-  background-color: powderblue;
-}
-h1 {
-  color: blue;
-}
-p {
-  color: red;
+  width: 100%;
 }
