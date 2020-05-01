@@ -1,52 +1,124 @@
-main {
-  position: relative;
-  overflow: hidden;
-  height: 100vh;
+body {
+  background-image: url(world_map.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
-section {
-  padding:3em 1em 1em;
-	width:100%;
-	height: 100vh;	
-	background: rgb(165, 103, 103);	
-	display: none;
-  transition: 1s;
-  margin-top: 50px;
-
-  
-}
- 
- 
-section:target {
-  display: block;
- 
-}
-
-.navigation {
+/*##########################navbar styles############################################*/
+nav {
   opacity: 0.8;
   overflow: hidden;
   top: 0;
   width: 100%;
-  background-color: black;
+  background: linear-gradient(#000000, #b3d1ff);
+  text-shadow: 2px 2px 5px black;
+  box-shadow: 2px 3px 5px black;
   position: fixed;
   z-index: 1;
   display: flex;
-  justify-content: center;
-  clear: both;
+  font-size: 17px;
+  justify-content: space-evenly;
 }
-.navigation > div  a {
-  float: left;
+nav > div  a {
+  padding: 14px 16px;
   display: block;
   color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
   transition: 1s;
 }
-.navigation :hover a{
-  background-color: burlywood;
+nav :hover a{
+  background: #ffffff;
+  color: rgb(99, 7, 7);
 }
-body {
+
+/*##########################Styles of the main 4 sections####################################################*/
+main {
+  overflow: hidden;
+  height: 100vh;
   width: 100%;
 }
+section {
+  padding:3em 1em 1em;
+	width:100%;
+	height: 100vh;	
+	display: none;
+  transition: 1s;
+  margin-top: 50px;
+  position: relative;  
+  
+}
+section:target {
+  display: block;
+}
+
+/*###########################login styling#############################################################*/
+#login_holder {
+  height: 50%;
+  width: 30%;
+  background-color: #ffff;
+  opacity: 0.8;
+  margin: auto;
+  margin-top: 120px;
+  box-shadow: 0px 3px 15px 3px black;
+  display: grid;
+}
+#login_holder h1, 
+#login_holder > #login_err_msg_holder,
+#login_holder > #login_form
+{
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+#err_msg {
+ //TODO
+ 
+}
+#login_form {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+::placeholder {
+  color: rgb(28, 28, 241);
+}
+.login_form_field {
+  border: none;
+  border-bottom: 1px solid #dfcdcd;
+  margin-bottom: 10px;
+  outline: none;
+  padding: 0px 0px 5px 5px;
+  font-size: medium;
+}
+.login_submit {
+  width: 20%;
+  padding: 10px 18px;
+  border-radius: 15px;
+  color: #000000;
+  background-color: #cceeff;
+  font-weight: bold;
+  font-size: 24px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 9px 5px #999;
+}
+
+.login_submit:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.login_submit:active {
+  background-color: black;
+  box-shadow: 0px 5px #666;
+  transform: translateY(4px);
+}
+
+.login_footer div {
+  float: right;
+}
+
+
+
+
