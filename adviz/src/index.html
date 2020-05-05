@@ -1,58 +1,78 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>AdViz</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body>
-    <div class="container">
-        <!-----------------------------------start navigation bar skeleton---------------------------------------->
-        <nav>
-            <div><img src="location_53876-25530.jpg" alt="AdViz" style="width: 90px; height: 45px;"></div>
-            <div><a href="#login_holder">Login</a></div>
-            <div><a href="#main">Main</a></div>
-            <div><a href="#addadress">Add Adress</a></div>
-            <div><a href="#update">update</a></div>
-        </nav>
-        <!-----------------------------------End navigation bar skeleton------------------------------------------>
 
-        <!-----------------------------------start login/main/add adress/update sections skeleton----------------->
-        <main>
-            <!------------------------------------start login------------------------------------------------------>
-            <section id = "login_holder">
-                <h1>Login Section</h1>
-                <div id="login_err_msg_holder"><p id="err_msg">Your username or password is false</p></div>
-                <form id="login_form" action="">
-                    <input type="text" id="username_field" name="usename" class="login_form_field" placeholder="username">
-                    <input type="password" id="pwd_field" name="password" class="login_form_field" placeholder="password">
-                    <button class="login_submit">login</button>
-                </form>
-                <div class="login_footer">
-                    <input type="checkbox" id="keep_logged_in" name="remmember me logged in">
-                    <label for="keep_logged_in">Keep me logged in</label>
-                    <div><a href="#signup_holder" id="sign_up_link">Sign up</a></div>
-                </div>
-            </section>
-            <!------------------------------------End login--------------------------------------------------------->
-            <!------------------------------------start main-------------------------------------------------------->
-            <section id = "main">
-                <h1>Main Section</h1>
-                <div style="width: 50%; margin: auto;"><iframe width="100%" height="600" src="https://maps.google.com/maps?width=1000%&amp;height=600&amp;hl=en&amp;coord=31.199004, 29.894378&amp;q=berlin+(AdViz)&amp;ie=UTF8&amp;t=&amp;z=9&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/draw-radius-circle-map/">Radius map tool</a></iframe></div><br />
-            </section>
-            <!------------------------------------End main---------------------------------------------------------->
-            <!------------------------------------start Add Adress-------------------------------------------------->
-            <section id = "addadress">
-                <h1>Add Adress section</h1>
-            </section>
-            <!------------------------------------End Add Adress---------------------------------------------------->
-            <!------------------------------------start update------------------------------------------------------>
-            <section id = "update">
-                <h1>Update section</h1>
-            </section>
-            <!------------------------------------End update-------------------------------------------------------->
-        </main>
-        <!------------------------------------End login/main/add adress/update sections skeleton---------------------->
-    </div>
-</body>
+<html>
+
+	<head>
+		<title>AdViz</title>
+		<link href="css/style.css" type="text/css" rel="stylesheet">
+		
+		
+	</head>
+	
+	
+	<body>
+	
+	<main>
+		<section id="mainView">
+			
+			
+			
+			<!-- <div class="logo"><img src="img/logo.png" alt="AdViz" style="max-width:10%; height:auto;"></div>	 -->
+			<nav>
+				<header>	
+					
+				<ul class="nav__links">
+					
+					<li><a href="#mainView">Main</a></li>
+					<li><a href="#newAddressView">Add New Address</a></li>
+					<li><a href="#updateDeleteView">Update/Delete Address</a></li>
+					<li><a href="#loginView">Login</a></li>
+				</ul>
+				<!-- <div class="logo"><img src="img/logo.png" alt="AdViz" style="max-width:15%; height:auto;"></div> -->
+			</header>
+			</nav>
+		
+		
+			<h1>Main</h1>
+
+
+
+
+			<div class="center pageDivContainer">
+			<iframe src="https://maps.google.com/maps?width=1000%&amp;height=600&amp;hl=en&amp;coord=31.199004, 29.894378&amp;q=berlin+(AdViz)&amp;ie=UTF8&amp;t=&amp;z=9&amp;iwloc=B&amp;output=embed" scrolling="no" marginheight="0" marginwidth="0" width="50%" height="600" frameborder="0">
+				<a href="https://www.maps.ie/draw-radius-circle-map/">Radius map tool</a>
+			</iframe>
+			</div>
+
+
+
+
+
+		</section>
+	
+		<section id="newAddressView">
+			<h1>Add New Address</h1>
+		</section>
+
+		<section id="updateDeleteView">
+			<h1>Update/Delete Address</h1>
+		</section>
+
+		<section id="loginView">
+			<h1>Login</h1>
+				
+			<div class="center border">
+				<p>Comming Soon</p>
+				<p><button>Login</button></p>
+			</div>
+		
+		</section>
+	</main>	
+		
+
+	
+	</body>
+
+
+
 </html>

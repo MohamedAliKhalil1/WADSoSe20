@@ -1,124 +1,126 @@
-body {
-  background-image: url(world_map.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-/*##########################navbar styles############################################*/
-nav {
-  opacity: 0.8;
-  overflow: hidden;
-  top: 0;
-  width: 100%;
-  background: linear-gradient(#000000, #b3d1ff);
-  text-shadow: 2px 2px 5px black;
-  box-shadow: 2px 3px 5px black;
-  position: fixed;
-  z-index: 1;
-  display: flex;
-  font-size: 17px;
-  justify-content: space-evenly;
-}
-nav > div  a {
-  padding: 14px 16px;
-  display: block;
-  color: #f2f2f2;
-  text-decoration: none;
-  transition: 1s;
-}
-nav :hover a{
-  background: #ffffff;
-  color: rgb(99, 7, 7);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+*{
+	margin:0px; 
+	padding:0px;
+	box-sizing: border-box;
 }
 
-/*##########################Styles of the main 4 sections####################################################*/
+#mainView{background:#D69C61;}
+#newAddressView{background:#D6CF61;}
+#updateDeleteView{background:#A8D661;}
+#loginView{background:#61D6A3;}
+
+
 main {
-  overflow: hidden;
-  height: 100vh;
-  width: 100%;
-}
-section {
-  padding:3em 1em 1em;
-	width:100%;
-	height: 100vh;	
-	display: none;
-  transition: 1s;
-  margin-top: 50px;
-  position: relative;  
-  
-}
-section:target {
-  display: block;
-}
 
-/*###########################login styling#############################################################*/
-#login_holder {
-  height: 50%;
-  width: 30%;
-  background-color: #ffff;
-  opacity: 0.8;
-  margin: auto;
-  margin-top: 120px;
-  box-shadow: 0px 3px 15px 3px black;
-  display: grid;
+	position: relative;
+	overflow: hidden;
+	height: 100vh;
+	
 }
-#login_holder h1, 
-#login_holder > #login_err_msg_holder,
-#login_holder > #login_form
-{
-  justify-items: center;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  height: 100%;
-}
-#err_msg {
- //TODO
  
+header{
+	
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px 0%	
 }
-#login_form {
-  display: grid;
-  justify-items: center;
-  align-items: center;
-}
-::placeholder {
-  color: rgb(28, 28, 241);
-}
-.login_form_field {
-  border: none;
-  border-bottom: 1px solid #dfcdcd;
-  margin-bottom: 10px;
-  outline: none;
-  padding: 0px 0px 5px 5px;
-  font-size: medium;
-}
-.login_submit {
-  width: 20%;
-  padding: 10px 18px;
-  border-radius: 15px;
-  color: #000000;
-  background-color: #cceeff;
-  font-weight: bold;
-  font-size: 24px;
-  cursor: pointer;
-  outline: none;
-  box-shadow: 0 9px 5px #999;
+.logo{
+	cursor: pointer;
+	background-color: aqua;
 }
 
-.login_submit:hover {
-  background-color: #000000;
-  color: #ffffff;
+section {
+	/* padding: 3em 1em 1em; */
+	width:100%;
+	height: 100vh;
+	background: white;
+	/* width:100%;  */
+	/* height:1000px;  */
+	float:left;	
 }
 
-.login_submit:active {
-  background-color: black;
-  box-shadow: 0px 5px #666;
-  transform: translateY(4px);
+nav{
+	overflow: hidden;
+	/* margin-left: 60px; */
+	width:100%; 
+	position:fixed; 
+	z-index:1;
+
+	/* top:80px; */
+	background-color: aqua;
 }
 
-.login_footer div {
-  float: right;
+li, a{
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	font-size: 16px;
+	color: #edf0f1;
+	text-decoration: none;
+	
+}
+
+h1{
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	font-size: 32px;
+	color: #edf0f1;
+	text-decoration: none;
+	/* color:#fff;  */
+	text-align:center; 
+	margin-top:100px;
+	
 }
 
 
 
+ul{
+	width:fit-content; 
+	margin:auto; 
+	list-style:none;
+	
+}
 
+.pageDivContainer{
+	margin-top: 50px;
+	
+}
+
+.center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+ul li{
+float:left; 
+margin-right:30px;
+}
+
+ul li a{
+	color:#fff; 
+	text-decoration:none;
+}
+
+.nav__links {
+	list-style: none;
+}
+.nav__links li {
+	display: inline-block;
+	padding: 0px 20px;
+}
+  
+.nav__links li a{
+	transition: all 0.3s ease 0s;
+}
+  
+.nav__links li a:hover{
+	color: #0088a9;
+}
+
+.border{
+	/* border: #000000; */
+	border-color: #000000;
+	border-style: dotted;
+}
