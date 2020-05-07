@@ -1,78 +1,63 @@
 <!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>AdViz</title>
+        <link href="css/style.css" type="text/css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="./img/favicon.ico">
+    </head>
 
-<html>
+    <body>
+        <main>    
+            
+            <!-- Main Section Start -->
+            <section id="mainView">
+                <header>
+                    <div class="logo">
+                        <img src="img/logo.png" alt="AdViz">
+                    </div>
+                    <nav>
+                        <ul class="nav_bar_links">
+                            <li><a href="#mainView">Main</a></li>
+                            <li><a href="#newAddressView">Add New Address</a></li>
+                            <li><a href="#updateDeleteView">Update/Delete Address</a></li>
+                            <li><a href="#loginView"><div class="loginBorder">Login</div></a></li>
+                        </ul>
+                    </nav>
+                </header>
+                <h1>Main</h1>
 
-	<head>
-		<title>AdViz</title>
-		<link href="css/style.css" type="text/css" rel="stylesheet">
-		
-		
-	</head>
-	
-	
-	<body>
-	
-	<main>
-		<section id="mainView">
-			
-			
-			
-			<!-- <div class="logo"><img src="img/logo.png" alt="AdViz" style="max-width:10%; height:auto;"></div>	 -->
-			<nav>
-				<header>	
-					
-				<ul class="nav__links">
-					
-					<li><a href="#mainView">Main</a></li>
-					<li><a href="#newAddressView">Add New Address</a></li>
-					<li><a href="#updateDeleteView">Update/Delete Address</a></li>
-					<li><a href="#loginView">Login</a></li>
-				</ul>
-				<!-- <div class="logo"><img src="img/logo.png" alt="AdViz" style="max-width:15%; height:auto;"></div> -->
-			</header>
-			</nav>
-		
-		
-			<h1>Main</h1>
+                <div class="center pageDivContainer">
+                    <iframe src="https://maps.google.com/maps?width=1000%&amp;height=600&amp;hl=en&amp;coord=31.199004, 29.894378&amp;q=berlin+(AdViz)&amp;ie=UTF8&amp;t=&amp;z=9&amp;iwloc=B&amp;output=embed" scrolling="no" marginheight="0" marginwidth="0" width="50%" height="500" frameborder="0">
+                    <a href="https://www.maps.ie/draw-radius-circle-map/">Radius map tool</a>
+                </iframe>
+                </div>
+            </section>
+            <!-- Main Section End -->
 
+            <!-- Add New Address Start -->
+            <section id="newAddressView">
+                <h1>Add New Address</h1>
+            </section>
+            <!-- Add New Address End -->
 
+            <!-- Update Delete Address Start -->
+            <section id="updateDeleteView">
+                <h1>Update/Delete Address</h1>
+            </section>
+            <!-- Update Delete Address End -->
 
-
-			<div class="center pageDivContainer">
-			<iframe src="https://maps.google.com/maps?width=1000%&amp;height=600&amp;hl=en&amp;coord=31.199004, 29.894378&amp;q=berlin+(AdViz)&amp;ie=UTF8&amp;t=&amp;z=9&amp;iwloc=B&amp;output=embed" scrolling="no" marginheight="0" marginwidth="0" width="50%" height="600" frameborder="0">
-				<a href="https://www.maps.ie/draw-radius-circle-map/">Radius map tool</a>
-			</iframe>
-			</div>
-
-
-
-
-
-		</section>
-	
-		<section id="newAddressView">
-			<h1>Add New Address</h1>
-		</section>
-
-		<section id="updateDeleteView">
-			<h1>Update/Delete Address</h1>
-		</section>
-
-		<section id="loginView">
-			<h1>Login</h1>
-				
-			<div class="center border">
-				<p>Comming Soon</p>
-				<p><button>Login</button></p>
-			</div>
-		
-		</section>
-	</main>	
-		
-
-	
-	</body>
-
-
-
+            <!-- Login Start -->
+            <section id="loginView">
+                <h1>Login</h1>
+                    
+                <div class="center border">
+                    <p>Comming Soon</p>
+                    <p><button>Login</button></p>
+                </div>
+            
+            </section>
+            <!-- Login End -->
+        </main>  
+    </body>
 </html>
