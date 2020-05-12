@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>AdViz</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="js/script.js"></script>
 </head>
 <body>
     <div class="container">
@@ -37,13 +38,45 @@
             <!------------------------------------End login--------------------------------------------------------->
             <!------------------------------------start main-------------------------------------------------------->
             <section id = "main">
-                <h1>Main Section</h1>
-                <div style="width: 50%; margin: auto;"><iframe width="100%" height="600" src="https://maps.google.com/maps?width=1000%&amp;height=600&amp;hl=en&amp;coord=31.199004, 29.894378&amp;q=berlin+(AdViz)&amp;ie=UTF8&amp;t=&amp;z=9&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/draw-radius-circle-map/">Radius map tool</a></iframe></div><br />
+                <h1>Add Adress section</h1>
+                <div id="container">
+                    <button onclick="showHandler()">Show</button>
+                    <button onclick="addHandler()">Add</button>
+
+                    <div id="show">
+                        <h1>hi in show</h1>
+                        <div style="float: left; z-index: 2; width: 280px; height: 400px; background-color: wheat; margin-left: 5px;">Name</div>
+                        <div style="float: right;margin-right: 10px;"><iframe width="480px" height="400px" src="https://maps.google.com/maps?width=1000%&amp;height=600&amp;hl=en&amp;coord=31.199004, 29.894378&amp;q=berlin+(AdViz)&amp;ie=UTF8&amp;t=&amp;z=9&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/draw-radius-circle-map/">Radius map tool</a></iframe></div><br />
+                    </div>
+
+                    <form action="" id="addadress-holder">
+                        <input type="text" id="vorname" class="addadress-field" name="vorname" placeholder="Vorname">
+                        <br><br>
+                        <input type="text" id="name" class="addadress-field" name="name" placeholder="Name">
+                        <br><br>
+                        <input type="text" id="straße" class="addadress-field" name="straße" placeholder="Straße">
+                        <br><br>
+                        <input type="text" id="plz" class="addadress-field" name="plz" placeholder="PLZ">
+                        <br><br>
+                        <input type="text" id="stadt" class="addadress-field" name="stadt" placeholder="Stadt">
+                        <br><br>
+                        <input type="text" id="land" class="addadress-field" name="land" placeholder="Land">
+                        <br><br>
+                        <label for="private" style="display: inline-block;"> Private</label>
+                        <input style="display: inline-block;" type="checkbox" id="private" name="private">
+                        <button id="adddata-button">Add</button>
+                    </form>
+                
+                    
+                </div>
+                
             </section>
             <!------------------------------------End main---------------------------------------------------------->
             <!------------------------------------start Add Adress-------------------------------------------------->
             <section id = "addadress">
-                <h1>Add Adress section</h1>
+                <h1>Main Section</h1>
+                <div style="width: 50%; margin: auto;"><iframe width="100%" height="600" src="https://maps.google.com/maps?width=1000%&amp;height=600&amp;hl=en&amp;coord=31.199004, 29.894378&amp;q=berlin+(AdViz)&amp;ie=UTF8&amp;t=&amp;z=9&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/draw-radius-circle-map/">Radius map tool</a></iframe></div><br />
+
             </section>
             <!------------------------------------End Add Adress---------------------------------------------------->
             <!------------------------------------start update------------------------------------------------------>

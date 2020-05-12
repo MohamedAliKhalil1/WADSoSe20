@@ -40,15 +40,13 @@ section {
   padding:3em 1em 1em;
 	width:100%;
 	height: 100vh;	
-	display: none;
   transition: 1s;
   margin-top: 50px;
   position: relative;  
-  
+  display: none;
 }
-section:target {
-  display: block;
-}
+
+
 
 /*###########################login styling#############################################################*/
 #login_holder {
@@ -59,8 +57,8 @@ section:target {
   margin: auto;
   margin-top: 120px;
   box-shadow: 0px 3px 15px 3px black;
-  display: grid;
 }
+
 #login_holder h1, 
 #login_holder > #login_err_msg_holder,
 #login_holder > #login_form
@@ -118,7 +116,42 @@ section:target {
 .login_footer div {
   float: right;
 }
+#login_holder:target {
+  display: grid;
+} 
+/*############################# Main styling##################*/
+#addadress {
+  display: none;
+}
+#addadress:target {
+  display: block;
+}
+/*#############################add address styling###############*/
+#main {
+  display: none;
+}
+#main > #container {
+  height: 70%;
+  width: 50%;
+  background-color: #ffff;
+  opacity: 0.8;
+  margin: auto;
+}
 
-
+#main:target {
+  display: block;
+}
+#addadress-holder {
+  background-color: gray;
+  width: 50%;
+  height: 89%;
+  margin: auto;
+  justify-items: center;
+  align-items: center;
+  display: none;
+}
+.addadress-field {
+  margin-top: 10px;
+}
 
 
