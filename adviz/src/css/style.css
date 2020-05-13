@@ -13,6 +13,7 @@
 #loginView{background: url(../img/bg.jpg);}
 
 *{
+	
 	margin:0px; 
 	padding:0px;
 	box-sizing: border-box;
@@ -30,8 +31,10 @@ header{
 	padding-left: 20px;
 	width: 100%;
 	background-color: #e1c699;
-	box-shadow: hotpink;
-	
+	background: linear-gradient(#2d405e, #b3d1ff);
+	/* box-shadow: hotpink; */
+	text-shadow: 2px 2px 5px rgb(150, 150, 150);
+	box-shadow: 2px 3px 5px black;
 	
 }
 
@@ -69,7 +72,7 @@ h1{
 li, a{
 	font-family: "Montserrat", sans-serif;
 	font-weight: 500;
-	font-size: 20px;
+	font-size: 18px;
 	color: #000000;
 	text-decoration: none;
 	
@@ -105,7 +108,8 @@ ul{
 }
   
 .nav_bar_links li a:hover{
-	color: #0088a9;
+	/* color: #0088a9; */
+	color: #ffffff;
 }
 
 .center{
@@ -120,12 +124,183 @@ ul{
 
 .loginBorder{
 	border-style: solid;
-	border-color: rgb(3, 192, 192);
+	/* border-color: rgb(3, 192, 192); */
+	border-color: rgb(0, 150, 7);
 	border-radius: 50px;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	padding-left: 15px;
 	padding-right: 15px;
-	
-	background-color: rgb(0, 173, 173);
+	/* background-color: rgb(0, 173, 173); */
+	background-color: rgb(0, 179, 9);
 }
+
+/* .login_holder {
+	height: 50%;
+	width: 30%;
+	background-color: #ffff;
+	opacity: 0.8;
+	margin: auto;
+	margin-top: 120px;
+	box-shadow: 0px 3px 15px 3px black;
+	display: grid;
+  }
+
+  .login_form {
+	display: grid;
+	justify-items: center;
+	align-items: center;
+  } */
+
+  /* #login_holder h1, 
+.login_err_msg_holder,
+.login_form
+{
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+#err_msg {
+ //TODO
+ 
+} */
+.font{
+	font-family: "Montserrat", sans-serif;
+}
+
+#login_holder {
+	height: 400px;
+	width: 400px;
+	background-color: #ffff;
+	opacity: 0.8;
+	margin: auto;
+	margin-top: 120px;
+	box-shadow: 0px 3px 15px 3px black;
+	display: grid;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+  /* #login_holder h1,  */
+  #login_holder > #login_err_msg_holder,
+  #login_holder > #login_form
+  {
+	justify-items: center;
+	align-items: center;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+  }
+
+  #err_msg {
+	font-family: "Montserrat", sans-serif;
+	font-size: 16px;
+	color: red;
+  }
+
+  #login_form {
+	display: grid;
+	justify-items: center;
+	align-items: center;
+  }
+
+  ::placeholder {
+	color: rgb(28, 28, 241);
+  }
+
+  .login_form_field {
+	border: none;
+	border-bottom: 1px solid #dfcdcd;
+	margin-bottom: 10px;
+	outline: none;
+	padding: 0px 0px 5px 5px;
+	font-size: medium;
+	font-family: "Montserrat", sans-serif;
+  }
+
+  .login_submit {
+	/* width: 150px;
+	padding: 10px 18px;
+	border-radius: 15px;
+	color: #000000;
+	background-color: #cceeff;
+	font-weight: bold;
+	font-size: 24px;
+	font-family: "Montserrat", sans-serif;
+	cursor: pointer;
+	outline: none;
+	box-shadow: 0 9px 5px #999; */
+
+	border-style: solid;
+	border-color: rgb(0, 150, 7);
+	border-radius: 50px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+
+	background-color: rgb(0, 179, 9);
+	font-family: "Montserrat", sans-serif;
+	font-size: 24px;
+	
+	box-shadow: 0 9px 5px #999; 
+	transition: all 0.3s ease 0s;
+
+
+  }
+  
+  .login_submit:hover {
+
+	background-color: #094e00;
+	color: #ffffff;
+  }
+  
+  .login_submit:active {
+	background-color: rgb(0, 0, 0);
+	box-shadow: 0px 5px #666;
+	transform: translateY(4px);
+  }
+  
+  .login_footer {
+	float: left;
+	margin-top: 50px;
+	/* justify-content: flex-end; */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  }
+
+  #username_field{
+	font-family: "Montserrat", sans-serif;
+	font-size: 18px;
+  }
+
+  #password_field{
+	font-family: "Montserrat", sans-serif;
+	font-size: 18px;
+  }
+
+  #sign_up_link
+  {
+	font-family: "Montserrat", sans-serif;
+	font-size: 18px;
+	width: auto;
+	
+ }
+
+ #sign_up_link{
+	transition: all 0.3s ease 0s;
+}
+  
+#sign_up_link:hover{
+	color: #929292;
+}
+
+ /* #sign_up_link:hover {
+	background-color: #094e00;
+	color: #ffffff;
+  } */

@@ -51,11 +51,28 @@
             <section id="loginView">
                 <h1>Login</h1>
                     
-                <div class="center border">
+                <!-- <div class="center border">
                     <p>Comming Soon</p>
                     <p><button>Login</button></p>
+                </div> -->
+                <div id="login_holder">
+                    <div id="login_err_msg_holder"><p id="err_msg">The username or password is incorrect.</p></div>
+                    <form id="login_form" action="">
+                        <input type="text" id="username_field" name="username" class="login_form_field" placeholder="Username">
+                        <input type="password" id="password_field" name="password" class="login_form_field" placeholder="Password">
+                        <button class="login_submit">Login</button>
+                        
+                    </form>
+                    
+
+                    <div class="login_footer">
+                        <div>
+                        <input type="checkbox" class="font" name="remember">
+                        <label class="font">Remember me</label>
+                        </div>
+                        <div><a href="#signup" id="sign_up_link">Sign up</a></div>
+                    </div>
                 </div>
-            
             </section>
             <!-- Login End -->
         </main>  
