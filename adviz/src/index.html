@@ -50,21 +50,38 @@
                     </div>
 
                     <form action="" id="addadress-holder">
-                        <input type="text" id="vorname" class="addadress-field" name="vorname" placeholder="Vorname">
-                        <br><br>
-                        <input type="text" id="name" class="addadress-field" name="name" placeholder="Name">
-                        <br><br>
-                        <input type="text" id="straße" class="addadress-field" name="straße" placeholder="Straße">
-                        <br><br>
-                        <input type="text" id="plz" class="addadress-field" name="plz" placeholder="PLZ">
-                        <br><br>
-                        <input type="text" id="stadt" class="addadress-field" name="stadt" placeholder="Stadt">
-                        <br><br>
-                        <input type="text" id="land" class="addadress-field" name="land" placeholder="Land">
-                        <br><br>
-                        <label for="private" style="display: inline-block;"> Private</label>
-                        <input style="display: inline-block;" type="checkbox" id="private" name="private">
-                        <button id="adddata-button">Add</button>
+                        <div id="add_new_user_field_pair">
+                            <label class="font">Firstname</label>
+                            <input type="text" id="username_field" name="firstname" size="25" placeholder="e.g. John">
+                        </div>
+                        <div id="add_new_user_field_pair">
+                            <label class="font">Lastname</label>
+                            <input type="text" id="username_field" name="lastname" size="25" placeholder="e.g. Doe">
+                        </div>
+                        <div id="add_new_user_field_pair">
+                            <label class="font">Street</label>
+                            <input type="text" id="username_field" name="street" size="25" required placeholder="e.g. Main Street 123">
+                        </div>
+                        <div id="add_new_user_field_pair">
+                            <label class="font">Zip Code</label>
+                            <input type="text" id="username_field" name="zipcode" size="25" required placeholder="e.g. 12345">
+                        </div>
+                        <div id="add_new_user_field_pair">
+                            <label class="font">City</label>
+                            <input type="text" id="username_field" name="city" size="25" required placeholder="e.g. Anytown">
+                        </div>
+                        <div id="add_new_user_field_pair">
+                            <label class="font">Country</label>
+                            <input type="text" id="username_field" name="country" size="25" required placeholder="e.g. USA">
+                        </div>
+                        <div id="add_new_user_field_pair">
+                            <label class="font">Private</label>
+                            <div style="width: 319px;"><input type="checkbox" class="font" name="private"></div>
+                            
+                        </div>
+                        <div id="add_new_user_field_pair">
+                            <button class="green_button">Add</button>
+                        </div>
                     </form>
                 
                     

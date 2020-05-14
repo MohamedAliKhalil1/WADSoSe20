@@ -146,12 +146,15 @@ section {
   width: 50%;
   height: 89%;
   margin: auto;
-  justify-items: center;
-  align-items: center;
   display: none;
 }
-.addadress-field {
-  margin-top: 10px;
+#add_new_user_field_pair {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  
+  
+  
 }
 
 
