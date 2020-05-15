@@ -513,6 +513,11 @@ ul{
 	background-color: rgb(128, 128, 128, 0.3);
 	transition: 0.3s;
 }
+#userElementContainer:active {
+	box-shadow: 0px 5px #666;
+	transform: translateY(4px);
+
+}
 
 
 #pictureContainer{
