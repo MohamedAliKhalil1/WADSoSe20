@@ -1,67 +1,162 @@
-body {
-  background-image: url(world_map.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-/*##########################navbar styles############################################*/
-nav {
-  opacity: 0.8;
-  overflow: hidden;
-  top: 0;
-  width: 100%;
-  background: linear-gradient(#000000, #b3d1ff);
-  text-shadow: 2px 2px 5px black;
-  box-shadow: 2px 3px 5px black;
-  position: fixed;
-  z-index: 1;
-  display: flex;
-  font-size: 17px;
-  justify-content: space-evenly;
-}
-nav > div  a {
-  padding: 14px 16px;
-  display: block;
-  color: #f2f2f2;
-  text-decoration: none;
-  transition: 1s;
-}
-nav :hover a{
-  background: #ffffff;
-  color: rgb(99, 7, 7);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+/* Background Colors */
+/* #mainView{background:#D69C61;}
+#newAddressView{background:#D6CF61;}
+#updateDeleteView{background:#A8D661;}
+#loginView{background:#61D6A3;} */
+/* background-image: url(../img/world_map.jpg); */
+
+#mainView{background: url(../img/bg.png);}
+#newAddressView{background: url(../img/bg.png);}
+#updateDeleteView{background: url(../img/bg.png);}
+#loginView{background: url(../img/bg.png);}
+#mainAddView{background: url(../img/bg.png);}
+
+*{
+	
+	margin:0px; 
+	padding:0px;
+	box-sizing: border-box;
 }
 
-/*##########################Styles of the main 4 sections####################################################*/
+header{
+	position:fixed; 
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	/* padding: 20px 50px; */
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 80px;
+	padding-left: 20px;
+	width: 100%;
+	background-color: #e1c699;
+	/* background: linear-gradient(#2d405e, #b3d1ff); */
+	background: linear-gradient(rgb(180, 109, 2), #E1C699);
+	/* box-shadow: hotpink; */
+	text-shadow: 2px 2px 5px rgb(150, 150, 150);
+	box-shadow: 2px 3px 5px black;
+	
+}
+
 main {
-  overflow: hidden;
-  height: 100vh;
-  width: 100%;
+
+	position: relative;
+	overflow: hidden;
+	height: 100vh;
+	/* scroll-behavior: auto; */
+	
 }
+
 section {
-  padding:3em 1em 1em;
+	/* padding: 3em 1em 1em; */
 	width:100%;
-	height: 100vh;	
-  transition: 1s;
-  margin-top: 50px;
-  position: relative;  
-  display: none;
+	height: 100vh;
+	background: white;
+	/* width:100%;  */
+	/* height:1000px;  */
+	float:left;	
 }
 
-
-
-/*###########################login styling#############################################################*/
-#login_holder {
-  height: 50%;
-  width: 30%;
-  background-color: #ffff;
-  opacity: 0.8;
-  margin: auto;
-  margin-top: 120px;
-  box-shadow: 0px 3px 15px 3px black;
+h1{
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	font-size: 32px;
+	color: #555555;
+	text-decoration: none;
+	/* color:#fff;  */
+	text-align:center; 
+	margin-top:160px;
+	
 }
 
-#login_holder h1, 
-#login_holder > #login_err_msg_holder,
-#login_holder > #login_form
+li, a{
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	font-size: 18px;
+	color: #000000;
+	text-decoration: none;
+	
+}
+
+ul{
+	width:fit-content; 
+	margin:auto; 
+	list-style:none;
+	
+}
+
+.logo{
+	cursor: pointer;
+	margin-right: auto;
+
+}
+
+.nav_bar_links {
+	list-style: none;
+
+	width:fit-content; 
+	margin:auto; 
+	list-style:none;
+}
+.nav_bar_links li {
+	display: inline-block;
+	padding: 0px 20px;
+}
+  
+.nav_bar_links li a{
+	transition: all 0.3s ease 0s;
+}
+  
+.nav_bar_links li a:hover{
+	/* color: #0088a9; */
+	color: #ffffff;
+}
+
+.center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.pageDivContainer{
+	margin-top: 50px;
+}
+
+.loginBorder{
+	border-style: solid;
+	/* border-color: rgb(3, 192, 192); */
+	border-color: rgb(0, 150, 7);
+	border-radius: 50px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	/* background-color: rgb(0, 173, 173); */
+	background-color: rgb(0, 179, 9);
+}
+
+/* .login_holder {
+	height: 50%;
+	width: 30%;
+	background-color: #ffff;
+	opacity: 0.8;
+	margin: auto;
+	margin-top: 120px;
+	box-shadow: 0px 3px 15px 3px black;
+	display: grid;
+  }
+
+  .login_form {
+	display: grid;
+	justify-items: center;
+	align-items: center;
+  } */
+
+  /* #login_holder h1, 
+.login_err_msg_holder,
+.login_form
 {
   justify-items: center;
   align-items: center;
@@ -72,89 +167,385 @@ section {
 #err_msg {
  //TODO
  
-}
-#login_form {
-  display: grid;
-  justify-items: center;
-  align-items: center;
-}
-::placeholder {
-  color: rgb(28, 28, 241);
-}
-.login_form_field {
-  border: none;
-  border-bottom: 1px solid #dfcdcd;
-  margin-bottom: 10px;
-  outline: none;
-  padding: 0px 0px 5px 5px;
-  font-size: medium;
-}
-.login_submit {
-  width: 20%;
-  padding: 10px 18px;
-  border-radius: 15px;
-  color: #000000;
-  background-color: #cceeff;
-  font-weight: bold;
-  font-size: 24px;
-  cursor: pointer;
-  outline: none;
-  box-shadow: 0 9px 5px #999;
+} */
+.font{
+	font-family: "Montserrat", sans-serif;
 }
 
-.login_submit:hover {
-  background-color: #000000;
-  color: #ffffff;
+
+/* Login */
+#login_holder {
+	height: 400px;
+	width: 400px;
+	background-color: #ffff;
+	opacity: 0.8;
+	margin: auto;
+	margin-top: 120px;
+	box-shadow: 0px 3px 15px 3px black;
+	display: grid;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
-.login_submit:active {
-  background-color: black;
-  box-shadow: 0px 5px #666;
-  transform: translateY(4px);
-}
+  /* #login_holder h1,  */
+  #login_holder > #login_err_msg_holder,
+  #login_holder > #login_form
+  {
+	justify-items: center;
+	align-items: center;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+  }
 
-.login_footer div {
-  float: right;
-}
-#login_holder:target {
-  display: grid;
-} 
-/*############################# Main styling##################*/
-#addadress {
-  display: none;
-}
-#addadress:target {
-  display: block;
-}
-/*#############################add address styling###############*/
-#main {
-  display: none;
-}
-#main > #container {
-  height: 70%;
-  width: 50%;
-  background-color: #ffff;
-  opacity: 0.8;
-  margin: auto;
-}
+  #err_msg {
+	font-family: "Montserrat", sans-serif;
+	font-size: 16px;
+	color: red;
+  }
 
-#main:target {
-  display: block;
-}
-#addadress-holder {
-  background-color: gray;
-  width: 50%;
-  height: 89%;
-  margin: auto;
-  display: none;
-}
-#add_new_user_field_pair {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
+  #login_form {
+	display: grid;
+	justify-items: center;
+	align-items: center;
+  }
+
+  ::placeholder {
+	color: rgba(28, 28, 241, .4);
+
+  }
+
+  .login_form_field {
+	border: none;
+	border-bottom: 1px solid #dfcdcd;
+	margin-bottom: 10px;
+	outline: none;
+	padding: 0px 0px 5px 5px;
+	font-size: medium;
+	font-family: "Montserrat", sans-serif;
+  }
+
+  .green_button {
+	border-style: solid;
+	border-color: rgb(0, 150, 7);
+	border-radius: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+
+	background-color: rgb(0, 179, 9);
+	font-family: "Montserrat", sans-serif;
+	font-size: 24px;
+	
+	box-shadow: 0 9px 5px #999; 
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+  }
+
+  .blue_button {
+	border-style: solid;
+	border-color: #3385ff;
+	border-radius: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+
+	background-color: #66a3ff;
+	font-family: "Montserrat", sans-serif;
+	font-size: 24px;
+	
+	box-shadow: 0 9px 5px #999; 
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+  }
+
+  .red_button {
+	border-style: solid;
+	border-color: #e60000;
+	border-radius: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+
+	background-color: #ff1a1a;
+	font-family: "Montserrat", sans-serif;
+	font-size: 24px;
+	
+	box-shadow: 0 9px 5px #999; 
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+  }
   
+  .green_button:hover {
+
+	background-color: #094e00;
+	color: #ffffff;
+  }
   
+  .green_button:active {
+	background-color: rgb(0, 0, 0);
+	box-shadow: 0px 5px #666;
+	transform: translateY(4px);
+  }
+
+  .blue_button:hover {
+
+	background-color: #001572;
+	color: #ffffff;
+  }
   
+  .blue_button:active {
+	background-color: rgb(0, 0, 0);
+	box-shadow: 0px 5px #666;
+	transform: translateY(4px);
+  }
+
+  .red_button:hover {
+
+	background-color: #630000;
+	color: #ffffff;
+  }
+  
+  .red_button:active {
+	background-color: rgb(0, 0, 0);
+	box-shadow: 0px 5px #666;
+	transform: translateY(4px);
+  }
+  
+
+  .red_button:hover {
+
+	background-color: #630000;
+	color: #ffffff;
+  }
+  
+  .red_button:active {
+	background-color: rgb(0, 0, 0);
+	box-shadow: 0px 5px #666;
+	transform: translateY(4px);
+  }
+  
+  .login_footer {
+	float: left;
+	margin-top: 50px;
+	/* justify-content: flex-end; */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  }
+
+  #username_field{
+	font-family: "Montserrat", sans-serif;
+	font-size: 18px;
+	
+  }
+
+  #password_field{
+	font-family: "Montserrat", sans-serif;
+	font-size: 18px;
+  }
+
+  #sign_up_link
+  {
+	font-family: "Montserrat", sans-serif;
+	font-size: 18px;
+	width: auto;
+	
+ }
+
+ #sign_up_link{
+	transition: all 0.3s ease 0s;
+}
+  
+#sign_up_link:hover{
+	color: #929292;
+}
+
+/* Add New User */
+
+#add_new_user{
+	height: auto;
+	width: 600px;
+	/* background-color: #ffff;
+	opacity: 0.8; */
+	background-color: rgba(255, 255, 255, .8);
+	margin: auto;
+	margin-top: 120px;
+	box-shadow: 0px 3px 15px 3px black;
+	display: grid;
+
+
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+#add_new_user_form{
+	/* display: flex;
+	justify-content: space-between;
+	align-items: center; */
+}
+
+#add_new_user_field_pair{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#remember_me{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;	
+}
+
+#add_new_user_form_field {
+	border: none;
+	border-bottom: 1px solid #dfcdcd;
+	font-family: "Montserrat", sans-serif;
+	font-size: 18px;
+	
+	/* size: 25; */
+	/* margin-bottom: 10px;
+	outline: none;
+	padding: 0px 0px 5px 5px;
+	font-size: medium;
+	font-family: "Montserrat", sans-serif; */
+  }
+
+
+.inner_nav_bar{
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 30px;
+
+	
+}
+
+.inner_nav_bar_links {
+	list-style: none;
+	
+	width:fit-content; 
+	margin:auto; 
+	list-style:none;
+
+}
+.inner_nav_bar_links li {
+	display: inline-block;
+	padding: 7px ;
+	border-style: solid;
+	border-color: #00cc00;
+	background-color: #00e600;
+	
+	/* box-shadow: 2px 2px 2px 2px grey; */
+	box-shadow: 0 9px 5px #999;
+	
+	border-radius: 4px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+  
+.inner_nav_bar_links li a{
+	transition: all 0.3s ease 0s;
+}
+  
+.inner_nav_bar_links li a:hover{
+	/* color: #0088a9; */
+	color: #ffffff;
 }
 
 
+#userContainer{
+	display: flex;
+	margin: auto;
+	width: 1100px;
+	height: 600px;
+	/* border: 3px solid green; */
+	background-color: rgba(255, 255, 255, .8);
+	box-shadow: 0px 3px 15px 3px black;
+	padding: 10px;
+	justify-content: space-between;
+	
+}
+
+
+#listContainer{
+	width: 43%;
+	height: auto;
+	overflow: scroll;
+	padding: 20px;
+	overflow-x: hidden;
+	
+	
+}
+#mapContainer{
+	/* margin-right: 50px; */
+
+}
+
+
+#userElementContainer{
+	/* border-style: solid; */
+	background-color: white;
+	cursor: pointer;
+	box-shadow: 0 9px 5px #999;
+	height: auto;
+	width: 100%;
+	display: flex;
+	/* display: flex; */
+	/* margin: auto; */
+	/* justify-content: space-between; */
+	padding: 10px;
+	/* height: 10em; */
+	align-items: center;
+	margin-bottom: 20px;
+	
+	
+}
+
+
+#pictureContainer{
+	/* float: left; */
+	vertical-align: middle;
+	cursor: pointer;
+	/* height: 50%;
+	width: 50%; */
+}
+
+#userTextContainer{
+	cursor: pointer;
+	width: 100%;
+	height: auto;
+	margin-left: 10px;
+
+}
+
+#userNameContainer{
+	font-family: "Montserrat", sans-serif;
+	font-size: 18px;
+}
+
+#userAddressContainer{
+	font-family: "Montserrat", sans-serif;
+	font-size: 12px;
+}
+
+#roundCornerPicture{
+	border-radius: 50px;
+	width: 60px;
+	height: auto;
+}
+
+#space{
+
+	height: 38px;
+	width: 100%;
+}

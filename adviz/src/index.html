@@ -1,78 +1,287 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>AdViz</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="js/script.js"></script>
-</head>
-<body>
-    <div class="container">
-        <!-----------------------------------start navigation bar skeleton---------------------------------------->
-        <nav>
-            <div><img src="location_53876-25530.jpg" alt="AdViz" style="width: 90px; height: 45px;"></div>
-            <div><a href="#login_holder">Login</a></div>
-            <div><a href="#main">Main</a></div>
-            <div><a href="#addadress">Add Adress</a></div>
-            <div><a href="#update">update</a></div>
-        </nav>
-        <!-----------------------------------End navigation bar skeleton------------------------------------------>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>AdViz</title>
+        <link href="css/style.css" type="text/css" rel="stylesheet">
+        <link rel="icon" type="image/png" href="./img/favicon.ico">
+        <div style="background-image: url('../img/bg.png');"> 
+    </head>
 
-        <!-----------------------------------start login/main/add adress/update sections skeleton----------------->
-        <main>
-            <!------------------------------------start login------------------------------------------------------>
-            <section id = "login_holder">
-                <h1>Login Section</h1>
-                <div id="login_err_msg_holder"><p id="err_msg">Your username or password is false</p></div>
-                <form id="login_form" action="">
-                    <input type="text" id="username_field" name="usename" class="login_form_field" placeholder="username">
-                    <input type="password" id="pwd_field" name="password" class="login_form_field" placeholder="password">
-                    <button class="login_submit">login</button>
-                </form>
-                <div class="login_footer">
-                    <input type="checkbox" id="keep_logged_in" name="remmember me logged in">
-                    <label for="keep_logged_in">Keep me logged in</label>
-                    <div><a href="#signup_holder" id="sign_up_link">Sign up</a></div>
-                </div>
-            </section>
-            <!------------------------------------End login--------------------------------------------------------->
-            <!------------------------------------start main-------------------------------------------------------->
-            <section id = "main">
-                <h1>Add Adress section</h1>
-                <div id="container">
-                    <button onclick="showHandler()">Show</button>
-                    <button onclick="addHandler()">Add</button>
-
-                    <div id="show">
-                        <h1>hi in show</h1>
-                        <div style="float: left; z-index: 2; width: 280px; height: 400px; background-color: wheat; margin-left: 5px;">Name</div>
-                        <div style="float: right;margin-right: 10px;"><iframe width="480px" height="400px" src="https://maps.google.com/maps?width=1000%&amp;height=600&amp;hl=en&amp;coord=31.199004, 29.894378&amp;q=berlin+(AdViz)&amp;ie=UTF8&amp;t=&amp;z=9&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/draw-radius-circle-map/">Radius map tool</a></iframe></div><br />
+    <body>
+        
+        <main>    
+            
+            <!-- Main Section Start -->
+            <section id="mainView">
+                <header>
+                    <div class="logo">
+                        <img src="img/logo.png" alt="AdViz">
                     </div>
+                    <nav>
+                        <ul class="nav_bar_links">
+                            <li><a href="#mainView">Main</a></li>
+                            <li><a href="#newAddressView">Add New Address</a></li>
+                            <li><a href="#updateDeleteView">Update/Delete Address</a></li>
+                            <li><a href="#loginView"><div class="loginBorder">Login</div></a></li>
+                        </ul>
+                    </nav>
+                </header>
+                <h1>Main</h1>
+                <nav class="inner_nav_bar">
+                    <ul class="inner_nav_bar_links">
+                        <!-- <li><a href="#mainView">Show Addresses</a></li> -->
+                        <li><a href="#newAddressView">Add</a></li>
+                        <li><a href="#updateDeleteView">Update</a></li>
+                    </ul>
+                </nav>
+                <!-- <div class="center pageDivContainer">
+                    <iframe src="https://maps.google.com/maps?width=1000%&amp;height=600&amp;hl=en&amp;coord=31.199004, 29.894378&amp;q=berlin+(AdViz)&amp;ie=UTF8&amp;t=&amp;z=9&amp;iwloc=B&amp;output=embed" scrolling="no" marginheight="0" marginwidth="0" width="50%" height="500" frameborder="0">
+                    <a href="https://www.maps.ie/draw-radius-circle-map/">Radius map tool</a>
+                </iframe>
+                </div> -->
 
-                    <form action="" id="addadress-holder">
+
+                <div id="userContainer">
+                    <div id="listContainer">
+                        <div id="userElementContainer">
+                            <div id="pictureContainer">
+                                <img id="roundCornerPicture" src="img/avatar/avatar-5.png" alt="avatar" >
+                            </div>
+                            <div id="userTextContainer">
+                                <div id="userNameContainer">
+                                Mohamed Ali
+                                </div>
+
+                                <div id="userAddressContainer">
+                                    Mustermann Str. - 12345 Berlin
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div id="userElementContainer">
+                            <div id="pictureContainer">
+                                <img id="roundCornerPicture" src="img/avatar/avatar-7.png" alt="avatar" >
+                            </div>
+                            <div id="userTextContainer">
+                                <div id="userNameContainer">
+                                Aiman Ibrahim Abdou
+                                </div>
+
+                                <div id="userAddressContainer">
+                                    Mustermann Str. - 12345 Berlin
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div id="userElementContainer">
+                            <div id="pictureContainer">
+                                <img id="roundCornerPicture" src="img/avatar/avatar-1.png" alt="avatar" >
+                            </div>
+                            <div id="userTextContainer">
+                                <div id="userNameContainer">
+                                Hello World
+                                </div>
+
+                                <div id="userAddressContainer">
+                                    ABCDEFGHIJKLMNOP Str. 12345 Berlin
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div id="userElementContainer">
+                            <div id="pictureContainer">
+                                <img id="roundCornerPicture" src="img/avatar/avatar-2.png" alt="avatar" >
+                            </div>
+                            <div id="userTextContainer">
+                                <div id="userNameContainer">
+                                Hello World
+                                </div>
+
+                                <div id="userAddressContainer">
+                                    ABCDEFGHIJKLMNOP Str. 12345 Berlin
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div id="userElementContainer">
+                            <div id="pictureContainer">
+                                <img id="roundCornerPicture" src="img/avatar/avatar-3.png" alt="avatar" >
+                            </div>
+                            <div id="userTextContainer">
+                                <div id="userNameContainer">
+                                Hello World
+                                </div>
+
+                                <div id="userAddressContainer">
+                                    ABCDEFGHIJKLMNOP Str. 12345 Berlin
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div id="userElementContainer">
+                            <div id="pictureContainer">
+                                <img id="roundCornerPicture" src="img/avatar/avatar-4.png" alt="avatar" >
+                            </div>
+                            <div id="userTextContainer">
+                                <div id="userNameContainer">
+                                Hello World
+                                </div>
+
+                                <div id="userAddressContainer">
+                                    ABCDEFGHIJKLMNOP Str. 12345 Berlin
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div id="userElementContainer">
+                            <div id="pictureContainer">
+                                <img id="roundCornerPicture" src="img/avatar/avatar-6.png" alt="avatar" >
+                            </div>
+                            <div id="userTextContainer">
+                                <div id="userNameContainer">
+                                Hello World
+                                </div>
+
+                                <div id="userAddressContainer">
+                                    ABCDEFGHIJKLMNOP Str. 12345 Berlin
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div id="userElementContainer">
+                            <div id="pictureContainer">
+                                <img id="roundCornerPicture" src="img/avatar/avatar-8.png" alt="avatar" >
+                            </div>
+                            <div id="userTextContainer">
+                                <div id="userNameContainer">
+                                Hello World
+                                </div>
+
+                                <div id="userAddressContainer">
+                                    ABCDEFGHIJKLMNOP Str. 12345 Berlin
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div id="userElementContainer">
+                            <div id="pictureContainer">
+                                <img id="roundCornerPicture" src="img/avatar/avatar-9.png" alt="avatar" >
+                            </div>
+                            <div id="userTextContainer">
+                                <div id="userNameContainer">
+                                Hello World
+                                </div>
+
+                                <div id="userAddressContainer">
+                                    ABCDEFGHIJKLMNOP Str. 12345 Berlin
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div id="userElementContainer">
+                            <div id="pictureContainer">
+                                <img id="roundCornerPicture" src="img/avatar/avatar-10.png" alt="avatar" >
+                            </div>
+                            <div id="userTextContainer">
+                                <div id="userNameContainer">
+                                Hello World
+                                </div>
+
+                                <div id="userAddressContainer">
+                                    ABCDEFGHIJKLMNOP Str. 12345 Berlin
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div id="userElementContainer">
+                            <div id="pictureContainer">
+                                <img id="roundCornerPicture" src="img/avatar/avatar-11.png" alt="avatar" >
+                            </div>
+                            <div id="userTextContainer">
+                                <div id="userNameContainer">
+                                Hello World
+                                </div>
+
+                                <div id="userAddressContainer">
+                                    ABCDEFGHIJKLMNOP Str. 12345 Berlin
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div id="userElementContainer">
+                            <div id="pictureContainer">
+                                <img id="roundCornerPicture" src="img/avatar/avatar-12.png" alt="avatar" >
+                            </div>
+                            <div id="userTextContainer">
+                                <div id="userNameContainer">
+                                Hello World
+                                </div>
+
+                                <div id="userAddressContainer">
+                                    ABCDEFGHIJKLMNOP Str. 12345 Berlin
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="mapContainer">
+                        <iframe src="https://maps.google.com/maps?width=1000%&amp;height=600&amp;hl=en&amp;coord=31.199004, 29.894378&amp;q=berlin+(AdViz)&amp;ie=UTF8&amp;t=&amp;z=9&amp;iwloc=B&amp;output=embed" scrolling="no" marginheight="0" marginwidth="0" width="600" height="100%" frameborder="0">
+                        <a href="https://www.maps.ie/draw-radius-circle-map/">Radius map tool</a>
+                    </iframe>
+                </div>
+                </div>
+
+                
+            </section>
+            <!-- Main Section End -->
+
+            <!-- Add New Address Start -->
+            <section id="newAddressView">
+                <h1>Add New Address</h1>
+                <nav class="inner_nav_bar">
+                    <ul class="inner_nav_bar_links">
+                        <li><a href="#mainView">Show Addresses</a></li>
+                        <!-- <li><a href="#newAddressView">Add</a></li> -->
+                    </ul>
+                </nav>
+                <div id="add_new_user">
+                    <form id="add_new_user_form" action="">
                         <div id="add_new_user_field_pair">
                             <label class="font">Firstname</label>
-                            <input type="text" id="username_field" name="firstname" size="25" placeholder="e.g. John">
+                            <input type="text" id="add_new_user_form_field" name="firstname" size="25" required placeholder="John">
                         </div>
                         <div id="add_new_user_field_pair">
                             <label class="font">Lastname</label>
-                            <input type="text" id="username_field" name="lastname" size="25" placeholder="e.g. Doe">
+                            <input type="text" id="add_new_user_form_field" name="lastname" size="25" required placeholder="Doe">
                         </div>
                         <div id="add_new_user_field_pair">
                             <label class="font">Street</label>
-                            <input type="text" id="username_field" name="street" size="25" required placeholder="e.g. Main Street 123">
+                            <input type="text" id="add_new_user_form_field" name="street" size="25" required placeholder="Main Street 123">
                         </div>
                         <div id="add_new_user_field_pair">
                             <label class="font">Zip Code</label>
-                            <input type="text" id="username_field" name="zipcode" size="25" required placeholder="e.g. 12345">
+                            <input type="text" id="add_new_user_form_field" name="zipcode" size="25" required placeholder="12345">
                         </div>
                         <div id="add_new_user_field_pair">
                             <label class="font">City</label>
-                            <input type="text" id="username_field" name="city" size="25" required placeholder="e.g. Anytown">
+                            <input type="text" id="add_new_user_form_field" name="city" size="25" required placeholder="Anytown">
                         </div>
                         <div id="add_new_user_field_pair">
                             <label class="font">Country</label>
-                            <input type="text" id="username_field" name="country" size="25" required placeholder="e.g. USA">
+                            <input type="text" id="add_new_user_form_field" name="country" size="25" required placeholder="USA">
                         </div>
                         <div id="add_new_user_field_pair">
                             <label class="font">Private</label>
@@ -82,27 +291,119 @@
                         <div id="add_new_user_field_pair">
                             <button class="green_button">Add</button>
                         </div>
+                        
                     </form>
-                
-                    
                 </div>
-                
-            </section>
-            <!------------------------------------End main---------------------------------------------------------->
-            <!------------------------------------start Add Adress-------------------------------------------------->
-            <section id = "addadress">
-                <h1>Main Section</h1>
-                <div style="width: 50%; margin: auto;"><iframe width="100%" height="600" src="https://maps.google.com/maps?width=1000%&amp;height=600&amp;hl=en&amp;coord=31.199004, 29.894378&amp;q=berlin+(AdViz)&amp;ie=UTF8&amp;t=&amp;z=9&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/draw-radius-circle-map/">Radius map tool</a></iframe></div><br />
+
 
             </section>
-            <!------------------------------------End Add Adress---------------------------------------------------->
-            <!------------------------------------start update------------------------------------------------------>
-            <section id = "update">
-                <h1>Update section</h1>
+            <!-- Add New Address End -->
+            
+            <!-- Update Delete Address Start -->
+            <section id="updateDeleteView">
+                <h1>Update/Delete Address</h1>
+                <nav class="inner_nav_bar">
+                    <ul class="inner_nav_bar_links">
+                        <li><a href="#mainView">Show Addresses</a></li>
+                        <!-- <li><a href="#newAddressView">Add</a></li> -->
+                    </ul>
+                </nav>
+                <!-- <div id="space"></div> -->
+
+                <div id="add_new_user">
+                    <form id="add_new_user_form" action="">
+                        <div id="add_new_user_field_pair">
+                            <label class="font">Firstname</label>
+                            <input type="text" id="add_new_user_form_field" name="firstname" size="25" required placeholder="John">
+                        </div>
+                        <div id="add_new_user_field_pair">
+                            <label class="font">Lastname</label>
+                            <input type="text" id="add_new_user_form_field" name="lastname" size="25" required placeholder="Doe">
+                        </div>
+                        <div id="add_new_user_field_pair">
+                            <label class="font">Street</label>
+                            <input type="text" id="add_new_user_form_field" name="street" size="25" required placeholder="Main Street 123">
+                        </div>
+                        <div id="add_new_user_field_pair">
+                            <label class="font">Zip Code</label>
+                            <input type="text" id="add_new_user_form_field" name="zipcode" size="25" required placeholder="12345">
+                        </div>
+                        <div id="add_new_user_field_pair">
+                            <label class="font">City</label>
+                            <input type="text" id="add_new_user_form_field" name="city" size="25" required placeholder="Anytown">
+                        </div>
+                        <div id="add_new_user_field_pair">
+                            <label class="font">Country</label>
+                            <input type="text" id="add_new_user_form_field" name="country" size="25" required placeholder="USA">
+                        </div>
+                        <div id="add_new_user_field_pair">
+                            <label class="font">Private</label>
+                            <div style="width: 319px;"><input type="checkbox" class="font" name="private"></div>
+                            
+                        </div>
+                        <div id="add_new_user_field_pair">
+                            <button class="blue_button">Change</button>
+                            <button class="red_button">Delete</button>
+
+                        </div>
+                        
+                    </form>
+                </div>
+
+
+
+
+
+
+
+
             </section>
-            <!------------------------------------End update-------------------------------------------------------->
-        </main>
-        <!------------------------------------End login/main/add adress/update sections skeleton---------------------->
-    </div>
-</body>
+            <!-- Update Delete Address End -->
+
+            <!-- Login Start -->
+            <section id="loginView">
+                <h1>Login</h1>
+                    
+                <!-- <div class="center border">
+                    <p>Comming Soon</p>
+                    <p><button>Login</button></p>
+                </div> -->
+                <div id="login_holder">
+                    <div id="login_err_msg_holder"><p id="err_msg">The username or password is incorrect.</p></div>
+                    <form id="login_form" action="">
+                        <input type="text" id="username_field" name="username" class="login_form_field" placeholder="Username" >
+                        <input type="password" id="password_field" name="password" class="login_form_field" placeholder="Password" >
+                        <button class="green_button">Login</button>
+                        
+                    </form>
+                    
+
+                    <div class="login_footer">
+                        <div>
+                        <input type="checkbox" class="font" name="remember">
+                        <label class="font">Remember me</label>
+                        </div>
+                        <div><a href="#signup" id="sign_up_link">Sign up</a></div>
+                    </div>
+                </div>
+            </section>
+            </section>
+            <!-- Add New Address End -->
+
+            <!-- Update Delete Address Start -->
+            <!-- <section id="mainAddView">
+                <h1>Add</h1>
+                <nav class="inner_nav_bar">
+                    <ul class="inner_nav_bar_links">
+                        <li><a href="#mainView">Show Addresses</a></li>
+                        <li><a href="#newAddressView">Add</a></li>
+                    </ul>
+                </nav>
+            </section> -->
+
+            <!-- Login End -->
+
+            
+        </main>  
+    </body>
 </html>
