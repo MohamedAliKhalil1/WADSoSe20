@@ -17,7 +17,9 @@ body {
     overflow-x: hidden;
     padding-top: 20px;
   }
-  
+  nav li {
+    float: left;
+  }
   nav a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
@@ -28,6 +30,10 @@ body {
   
   nav a:hover {
     color: #f1f1f1;
+    background-color: #818181;
+  }
+  .nav_bar_links li.trigram {
+    display: none;
   }
 
   
@@ -80,6 +86,47 @@ body {
     position: relative;
     text-align: center;
     /* background-color: lawngreen; */
+  }
+
+  @media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+      overflow-y: visible;
+    }
+
+    nav {
+      width: 100%;
+      height: auto;
+      position: relative;
+
+    }
+    .right_base_page{
+      margin-left: 0%;
+      display: block;
+    }
+    ul.nav_bar_links :not(:nth-child(1)){
+      display: none;
+    }
+    .nav_bar_links li.trigram {
+      display: block;
+      float: right;
+    }
+    ul.nav_bar_links.responsive li.trigram{
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    .nav_bar_links.responsive {
+      position: relative;
+    }
+    .nav_bar_links.responsive li{
+      display: inline;
+      float: none;
+    }
+    .nav_bar_links.responsive li a {
+      display: block;
+      float: none;
+    }
   }
 
 
