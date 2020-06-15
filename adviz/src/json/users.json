@@ -1,0 +1,12 @@
+[
+    {
+      "username":       "admin",
+      "password":       "SuperSecretPassword",
+      "accountType":    "AdminAccount"
+    },
+    {
+        "username":     "normalo",
+        "password":     "SuperHiddenPassword",
+        "accountType":  "StandardAccount"
+    }
+]

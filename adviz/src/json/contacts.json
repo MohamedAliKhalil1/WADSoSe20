@@ -1,0 +1,22 @@
+[
+    {
+        "firstname":  "Mohamed",
+        "lastname":   "Ali",
+        "street":     "Spandauer Str. 123",
+        "zipcode":    "13874",
+        "city":       "Berlin",
+        "country":    "Germany",
+        "privateContact":    "false",
+        "avatar":     "../img/avatar/avatar.png"
+    },
+    {
+        "firstname":  "Aiman",
+        "lastname":   "Abdou",
+        "street":     "Spandauer Str. 123",
+        "zipcode":    "13874",
+        "city":       "Berlin",
+        "country":    "Germany",
+        "privateContact":    "false",
+        "avatar":     "../img/avatar/avatar-1.png"
+    }
+]
