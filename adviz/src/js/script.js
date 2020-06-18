@@ -1,41 +1,16 @@
 //Main Java File
 import {PageControl} from './pagecontrol.js';
 import {ContactListHandler, Contact} from './contactListHandler.js';
-
-
-//     document.getElementById("trigram").addEventListener("click", function(){
-//         let x = document.getElementById("drop_down_click");
-//         if(x.className === "nav_bar_links"){
-//             x.className += " responsive";
-//         } else {
-//             x.className = "nav_bar_links";
-//         }
-//     });
-
-// {/* <iframe scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=%20Los+Angeles+Hollywood+blvd+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="1200" height="600" frameborder="0"></iframe> */}
-
-// let street = "Wilmersdorfer Str. 10";
-// let city = "Berlin";
-// let zipcode = "10585"; 
+import {UserListHandler, User} from './userListHandler.js';
 
 
 
 
 
 
-// // let locationString = "Los+Angeles+Hollywood+blvd";
-// let locationString = street+"+"+city+"+"+zipcode;
-// // let locationString = "Los+Angeles+Hollywood+blvd"; 
-// // document.getElementById("mapContainer").innerHTML = '<iframe class="googleMapIframe" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=480&amp;height=400&amp;hl=en&amp;q=%20' + locationString + '+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="1200" height="600" frameborder="0"></iframe>';
-// document.getElementById("mapContainer").innerHTML = '<iframe class="googleMapIframe" scrolling="no" src="https://maps.google.com/maps?width=480&amp;height=400&amp;hl=en&amp;q=%20' + locationString + '+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" frameborder="0"></iframe>';
-
-
-
-
-let pageControlDebug = new PageControl();
-pageControlDebug.showMainContent();
 let jsonObject = [
     {
+        "id":         "0",
         "firstname":  "Mohamed",
         "lastname":   "Ali",
         "street":     "Spandauer Str. 123",
@@ -46,6 +21,7 @@ let jsonObject = [
         "avatar":     "img/avatar/avatar.png"
     },
     {
+        "id":         "1",
         "firstname":  "Aiman",
         "lastname":   "Abdou",
         "street":     "Spandauer Str. 123",
@@ -56,6 +32,7 @@ let jsonObject = [
         "avatar":     "img/avatar/avatar-1.png"
     },
     {
+        "id":         "2",
         "firstname":  "Aiman",
         "lastname":   "Abdou",
         "street":     "Spandauer Str. 123",
@@ -65,7 +42,8 @@ let jsonObject = [
         "privateContact":    "false",
         "avatar":     "img/avatar/avatar-2.png"
     },
-    {
+    {   
+        "id":         "3",
         "firstname":  "Aiman",
         "lastname":   "Abdou",
         "street":     "Spandauer Str. 123",
@@ -75,7 +53,8 @@ let jsonObject = [
         "privateContact":    "false",
         "avatar":     "img/avatar/avatar-3.png"
     },
-    {
+    {   
+        "id":         "4",
         "firstname":  "Aiman",
         "lastname":   "Abdou",
         "street":     "Spandauer Str. 123",
@@ -86,6 +65,7 @@ let jsonObject = [
         "avatar":     "img/avatar/avatar-4.png"
     },
     {
+        "id":         "5",
         "firstname":  "Aiman",
         "lastname":   "Abdou",
         "street":     "Spandauer Str. 123",
@@ -97,45 +77,50 @@ let jsonObject = [
     }
 ];
 
+// let users = [ 
+//     {
+//         "id":         "0",
+//         "username": "admin",
+//         "password": "abcde",
+//         "accounttype": "admin"
+//     },
+//     {
+//         "id":         "1",
+//         "username": "normalo",
+//         "password": "12345",
+//         "accounttype": "standard"
+//     }
+
+//     ];
+
 let jsonArrayObejt = jsonObject[0];
-let contactTest = new Contact(jsonArrayObejt.firstname, jsonArrayObejt.lastname, jsonArrayObejt.street, jsonArrayObejt.zipcode, jsonArrayObejt.city, jsonArrayObejt.country, jsonArrayObejt.privateContact, jsonArrayObejt.avatar)
-
-// contactTest.showUser();
-
-let clh = new ContactListHandler();
-
-// clh.showUser();
+let contactTest = new Contact(jsonArrayObejt.id, jsonArrayObejt.firstname, jsonArrayObejt.lastname, jsonArrayObejt.street, jsonArrayObejt.zipcode, jsonArrayObejt.city, jsonArrayObejt.country, jsonArrayObejt.privateContact, jsonArrayObejt.avatar);
+// let userTest = new User(0, "admin", "qwerty", "admin");
 
 
-// document.getElementById("contactListContainer").innerHTML = contactTest.getHTMLElement(); 
-
-let i;
-let contactList; 
-contactList = contactTest.getHTMLElement(); 
-// document.getElementById("contactListContainer").innerHTML +=  contactTest.getHTMLElement(); 
-
-// document.insertAdjacentHTML('contactListContainer', 'additional HTML code');
-for (i = 0; i < jsonObject.length; i++) {
-    let jsonArrayObejt = jsonObject[i];
-    let contactTest = new Contact(jsonArrayObejt.firstname, jsonArrayObejt.lastname, jsonArrayObejt.street, jsonArrayObejt.zipcode, jsonArrayObejt.city, jsonArrayObejt.country, jsonArrayObejt.privateContact, jsonArrayObejt.avatar)
-
-    document.getElementById("contactListContainer").innerHTML +=  contactTest.getHTMLElement();
-
-}
-// alert(contactList);
-
-// document.getElementById("aiman").innerHTML = contactTest.getHTMLElement(); 
-// document.getElementById("divContainer").innerHTML = contactTest.getHTMLElement(); 
+// let clh = new ContactListHandler();
+// clh.fillContactList(userTest);
 
 
+// let i;
+// let contactList; 
+// contactList = contactTest.getHTMLElement(); 
 
-// function showHandler(){
-//     document.getElementById('show').style.display = 'block';
-//     document.getElementById('addadress-holder').style.display = 'none';
+// for (i = 0; i < jsonObject.length; i++){
+//     let jsonArrayObejt = jsonObject[i];
+//     let contactTest = new Contact(jsonArrayObejt.id, jsonArrayObejt.firstname, jsonArrayObejt.lastname, jsonArrayObejt.street, jsonArrayObejt.zipcode, jsonArrayObejt.city, jsonArrayObejt.country, jsonArrayObejt.privateContact, jsonArrayObejt.avatar)
+
+//     document.getElementById("contactListContainer").innerHTML +=  contactTest.getHTMLElement();
+
 // }
 
-// function addHandler() {
-//     document.getElementById('show').style.display = 'none';
-//     document.getElementById('addadress-holder').style.display = 'grid';
-// }
+
+document.getElementById("login_form_button").addEventListener("click", 
+    function(){
+        let userAccountControll = new UserListHandler();
+
+        userAccountControll.checkUserCredentials();
+    }
+);
+
 

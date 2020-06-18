@@ -24,17 +24,17 @@
               <img src="./img/logo.png" alt="Adviz Logo">
             </div>
             <ul class="nav_bar_links" id="drop_down_click">
-                <li><a id="mainLink" class="Main" href="#mainView">Main</a></li>
+                <li><a id="mainLink" class="Main" href="#mainContent">Main</a></li>
                 <li><a id="addNewAddressLink" href="#">Add New Address</a></li>
                 <li><a id="updateAddressLink" href="#updateDeleteView">Update/Delete Address</a></li>
-                <li id="loginLink" class="login"><a href="#loginView">Login</a></li>
+                <li id="loginLink" class="login"><a href="#loginContent">Login</a></li>
                 <li id="trigram" class="trigram"><a href="javascript:void(0)">&#9776;</a></li>
             </ul>
         </nav>
 
           <div class="right_base_page">
 
-            <div id="mainContent" class="main">
+            <section id="mainContent" class="main">
               <h1>Main</h1>
               <div id="MapContactsContainer" class="MapContactsContainer">
                 <div id=contactListContainer class=contactListContainer >
@@ -46,37 +46,115 @@
                 </div>
                 
               </div>
-            </div>
+            </section>
           
             <div id="addNewAddressContent" class="add_new_address">
               <h1>Add New Address</h1>
-              <p>This sidebar is of full height (100%) and always shown.</p>
-              <p>Scroll down the page to see the result.</p>
-              <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-              <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-              <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-              <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+              <div id="add_new_user">
+                <form id="add_new_user_form" action="">
+                    <div id="add_new_user_field_pair">
+                        <label class="font">Firstname</label>
+                        <input type="text" id="add_new_user_form_field" name="firstname" size="25" required placeholder="John">
+                    </div>
+                    <div id="add_new_user_field_pair">
+                        <label class="font">Lastname</label>
+                        <input type="text" id="add_new_user_form_field" name="lastname" size="25" required placeholder="Doe">
+                    </div>
+                    <div id="add_new_user_field_pair">
+                        <label class="font">Street</label>
+                        <input type="text" id="add_new_user_form_field" name="street" size="25" required placeholder="Main Street 123">
+                    </div>
+                    <div id="add_new_user_field_pair">
+                        <label class="font">Zip Code</label>
+                        <input type="text" id="add_new_user_form_field" name="zipcode" size="25" required placeholder="12345">
+                    </div>
+                    <div id="add_new_user_field_pair">
+                        <label class="font">City</label>
+                        <input type="text" id="add_new_user_form_field" name="city" size="25" required placeholder="Anytown">
+                    </div>
+                    <div id="add_new_user_field_pair">
+                        <label class="font">Country</label>
+                        <input type="text" id="add_new_user_form_field" name="country" size="25" required placeholder="USA">
+                    </div>
+                    <div id="add_new_user_field_pair">
+                        <label class="font">Private</label>
+                        <div style="width: 319px;"><input type="checkbox" class="font" name="private"></div>
+                        
+                    </div>
+                    <div id="add_new_user_field_pair">
+                        <button class="green_button">Add</button>
+                    </div>
+                    
+                </form>
+            </div>
             </div>
 
             <div id="updateAddressesContent" class="update_address">
               <h1>Update/Delete Address</h1>
-              <p>This sidebar is of full height (100%) and always shown.</p>
-              <p>Scroll down the page to see the result.</p>
-              <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-              <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-              <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-              <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+              <div id="add_new_user">
+                <form id="add_new_user_form" action="">
+                    <div id="add_new_user_field_pair">
+                        <label class="font">Firstname</label>
+                        <input type="text" id="add_new_user_form_field" name="firstname" size="25" required placeholder="John">
+                    </div>
+                    <div id="add_new_user_field_pair">
+                        <label class="font">Lastname</label>
+                        <input type="text" id="add_new_user_form_field" name="lastname" size="25" required placeholder="Doe">
+                    </div>
+                    <div id="add_new_user_field_pair">
+                        <label class="font">Street</label>
+                        <input type="text" id="add_new_user_form_field" name="street" size="25" required placeholder="Main Street 123">
+                    </div>
+                    <div id="add_new_user_field_pair">
+                        <label class="font">Zip Code</label>
+                        <input type="text" id="add_new_user_form_field" name="zipcode" size="25" required placeholder="12345">
+                    </div>
+                    <div id="add_new_user_field_pair">
+                        <label class="font">City</label>
+                        <input type="text" id="add_new_user_form_field" name="city" size="25" required placeholder="Anytown">
+                    </div>
+                    <div id="add_new_user_field_pair">
+                        <label class="font">Country</label>
+                        <input type="text" id="add_new_user_form_field" name="country" size="25" required placeholder="USA">
+                    </div>
+                    <div id="add_new_user_field_pair">
+                        <label class="font">Private</label>
+                        <div style="width: 319px;"><input type="checkbox" class="font" name="private"></div>
+                        
+                    </div>
+                    <div id="add_new_user_field_pair">
+                        <button class="blue_button">Change</button>
+                        <button class="red_button">Delete</button>
+
+                    </div>
+                    
+                </form>
+            </div>
             </div>
           
 
-            <div id="loginContent" class="login_page">
+            <section id="loginContent" class="login_page">
               <h1>Login</h1>
-              <p>This sidebar is of full height (100%) and always shown.</p>
-              <p>Scroll down the page to see the result.</p>
-              <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-              <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-              <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-              <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+
+              
+              <div id="login_holder">
+                <div id="login_err_msg_holder"><p id="err_msg">The username or password is incorrect.</p></div>
+                <form id="login_form" action="">
+                    <input type="text" id="username_field" name="username" class="login_form_field" required placeholder="Username" >
+                    <input type="password" id="password_field" name="password" class="login_form_field" required placeholder="Password" >
+                    <button type="button" id="login_form_button" class="green_button">Login</button>
+                    
+                </form>
+                
+
+                <div class="login_footer">
+                    <div>
+                    <input type="checkbox" class="font" name="remember">
+                    <label class="font">Remember me</label>
+                    </div>
+                    <div><a href="#signup" id="sign_up_link">Sign up</a></div>
+                </div>
+            </section>
             </div>
 
           </div>
