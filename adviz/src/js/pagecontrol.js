@@ -3,12 +3,18 @@ import {ContactListHandler, Contact} from './contactListHandler.js';
 export class PageControl{
     constructor() {
         this.url = location.href; 
+        // this.showLoginPageAfterCheck();
+        
+        
         // alert( title );
     }
     /**
      * @description Disables all page contents simultaneously. 
      * 
      */
+
+
+
     disableAllPages(){
         document.getElementById('loginContent').style.display = 'none';
         document.getElementById('mainContent').style.display = 'none';

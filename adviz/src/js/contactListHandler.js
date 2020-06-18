@@ -32,20 +32,20 @@ export class ContactListHandler{
         let jsonArrayObject = jsonContacts[1];
         let contact = new Contact(jsonArrayObject.firstname, jsonArrayObject.lastname, jsonArrayObject.street, jsonArrayObject.zipcode, jsonArrayObject.city, jsonArrayObject.country, jsonArrayObject.privateContact, jsonArrayObject.avatar);
         
-        contact.showUser();
+        // contact.showUser();
 
     }
 
     fillContactList(){
         
         let pc = new PageControl();
-        alert("Fill: " + pc.getCookie("accounttype")); 
+        // alert("Fill: " + pc.getCookie("accounttype")); 
         let accounttype = pc.getCookie("accounttype");
         
         let i;
         for (i = 0; i < jsonContacts.length; i++){
             let jsonArrayObject = jsonContacts[i];
-            alert("Fill: " + pc.getCookie("accounttype")); 
+            // alert("Fill: " + pc.getCookie("accounttype")); 
             if(!(accounttype === "admin") && (jsonArrayObject.privateContact === "true")){
                 continue; 
             }
