@@ -1,5 +1,6 @@
 import { PageControl } from "./pagecontrol.js";
-
+// import { mapHandler } from "./map.js";
+import {mapHandler} from './map.js';
 export class ContactListHandler{
     constructor() {
         // alert( title );
@@ -62,9 +63,10 @@ export class ContactListHandler{
         let jsonArray = localStorage.getItem("ContactJSONArray");
         let jsonArrayList = JSON.parse(jsonArray);
         let pc = new PageControl();
+        let mapObject = new mapHandler();
         // alert("Fill: " + pc.getCookie("accounttype")); 
         let accounttype = pc.getCookie("accounttype");
-        
+        mapObject.initMap();
         document.getElementById("contactListContainer").innerHTML = "";
         let i;
         for (i = 0; i < jsonArrayList.length; i++){
@@ -74,7 +76,11 @@ export class ContactListHandler{
             if(!(accounttype == "admin") && (jsonArrayObject.privateContact == true)){
                 continue; 
             }
+
             let contactTest = new Contact(jsonArrayObject.id, jsonArrayObject.firstname, jsonArrayObject.lastname, jsonArrayObject.street, jsonArrayObject.zipcode, jsonArrayObject.city, jsonArrayObject.country, jsonArrayObject.privateContact, jsonArrayObject.avatar);
+            
+            // mapObject.codeAddress("Wilmersdorfer");
+            mapObject.codeAddress(jsonArrayObject.street + " " + jsonArrayObject.zipcode + " " + jsonArrayObject.city);
             document.getElementById("contactListContainer").innerHTML +=  contactTest.getHTMLElement();
             
         }  

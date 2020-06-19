@@ -2,10 +2,12 @@
 import {PageControl} from './pagecontrol.js';
 import {ContactListHandler, Contact} from './contactListHandler.js';
 import {UserListHandler, User} from './userListHandler.js';
+import {mapHandler} from './map.js';
 
 
 let pc = new PageControl();
 let clh = new ContactListHandler();
+let mapObject = new mapHandler();
 
 
 if(pc.getCookie("wrongpw") == "true"){
@@ -130,3 +132,50 @@ document.getElementById("green_add_button").addEventListener("click",
 
 
 
+
+
+
+
+
+
+    // let geocoder;
+    //  let geocoder1;
+    //  let map;
+    // //   let address = "Wilmersdorfer Str. 123";
+
+    //   function initMap() {
+    //     let map = new google.maps.Map(document.getElementById('mapContainer'), {
+    //       zoom: 8,
+    //       center: {lat: -34.397, lng: 150.644}
+    //     });
+    //     geocoder = new google.maps.Geocoder();
+
+        
+
+    //     codeAddress(geocoder, map, "Wilmersdorfer Str. 123");
+    //     codeAddress(geocoder, map, "Kurfürstendamm 123");
+    //     // codeAddress(geocoder, map, "dasdasdasdasdasdasdasdasdasdasdasdasdadasdasdass");
+    //   }
+
+
+    //   function codeAddress(geocoder, map, customAddress) {
+
+    //     geocoder.geocode({'address': customAddress}, function(results, status) {
+    //       if (status === 'OK') {
+    //         map.setCenter(results[0].geometry.location);
+    //         let marker = new google.maps.Marker({
+    //           map: map,
+    //           position: results[0].geometry.location
+    //         });
+    //       } else {
+    //         alert('Geocode was not successful for the following reason: ' + status);
+    //       }
+    //     });
+    //   }
+
+
+
+    // mapObject.initMap();
+    // mapObject.codeAddress("Wilmersdorfer Str. 123");
+    // mapObject.codeAddress("Treskow Allee. 123");
+    // mapObject.codeAddress("Pyramides of Giza");
