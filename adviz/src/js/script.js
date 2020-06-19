@@ -94,6 +94,11 @@ document.getElementById("login_form_button").addEventListener("click",
 document.getElementById("green_add_button").addEventListener("click", 
     function(){
 
+        let mapCheck = new mapHandler();
+        mapCheck.initMap();
+        let clh = new ContactListHandler();
+        let pages = new PageControl();
+
         // // document.getElementsByName("login_form_button")[0].type = "button";
         // let userAccountControll = new UserListHandler();
 
@@ -105,7 +110,7 @@ document.getElementById("green_add_button").addEventListener("click",
         let city = document.getElementById("add_new_user_form_field_city").value.trim();
         let country = document.getElementById("add_new_user_form_field_country").value.trim();
         let privateContact = document.getElementById("add_new_user_form_field_private").checked;
-        
+        mapCheck.checkAddress(street + " " + zipcode + " "  + city);
 
         if(
             (firstname !== '') &&
@@ -113,14 +118,25 @@ document.getElementById("green_add_button").addEventListener("click",
             (street !== '') &&
             (zipcode !== '') &&
             (city !== '') &&
-            (country !== '')
+            (country !== '') 
+            // mapCheck.checkAddress(street + ", " + zipcode + ", "  + city)
+            // && mapCheck.checkAddress(street)
             ){
-                let clh = new ContactListHandler();
+                // alert(mapCheck.checkAddress(street));
                 let newContact = new Contact(0, firstname, lastname, street, zipcode, city, country, privateContact, "img/avatar/avatar-1.png");
                 clh.addContactToStorage(newContact);
                 // newContact.showUser();
                 // history.replaceState(null,null,this.url); 
+            }else{
+                // if(!mapCheck.checkAddress(street + ", " + zipcode + ", "  + city)){
+                //     alert("Please Check your Address: " + street + ", " + zipcode + ", "  + city);
+                // }
+                if(!mapCheck.checkAddress(street )){
+                    alert("Please Check your Address: " + street);
+                }
+                pages.showAddNewAddressContent();
             }
+
         
         
         

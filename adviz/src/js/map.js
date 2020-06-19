@@ -25,6 +25,8 @@ export class mapHandler{
      // codeAddress(geocoder, map, "dasdasdasdasdasdasdasdasdasdasdasdasdadasdasdass");
    }
 
+   
+
 
    codeAddress(customAddress) {
     let map = this.map; 
@@ -40,6 +42,19 @@ export class mapHandler{
          alert('Geocode was not successful for the following reason: ' + status);
        }
      });
+   }
+
+   checkAddress(customAddress){
+    let map = this.map;
+    this.geocoder.geocode({'address': customAddress}, function(results, status) {
+      if (status === 'OK') {
+        // alert("OK");
+        return true;
+      } else {
+        return false; 
+      }
+    });
+    // return false;
    }
 
 }

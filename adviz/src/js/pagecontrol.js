@@ -1,5 +1,6 @@
 import {UserListHandler, User} from './userListHandler.js';
 import {ContactListHandler, Contact} from './contactListHandler.js';
+import {mapHandler} from './map.js';
 export class PageControl{
     constructor() {
         this.url = location.href; 
@@ -109,6 +110,7 @@ export class PageControl{
                 this.showLoginContent();
             }else{
                 this.showMainContent();
+                
                 if(accounttype === "admin"){
                     document.getElementById('addNewAddressLink').style.display = 'block';
                     document.getElementById('green_add_button').style.display = 'block';
