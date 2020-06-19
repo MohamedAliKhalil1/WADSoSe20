@@ -38,14 +38,21 @@ export class UserListHandler{
         }
 
         if(correctUser){
+            
             pageControl.showMainContent();
             pageControl.jumpToAnchor("mainContent");
+            document.getElementById("err_msg").style.display = "none";
+            document.cookie = "wrongpw=false;"; 
         }else{
-            //Wrong Password text. id=err_msg
+            document.cookie = "wrongpw=true;"; 
+            // Wrong Password text. id=err_msg
+            document.getElementById("err_msg").style.display = "block";
         }
 
         return user; 
     }
+
+    
 
     deleteCookie(){
         // document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";

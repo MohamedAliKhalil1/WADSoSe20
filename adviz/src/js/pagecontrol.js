@@ -102,41 +102,57 @@ export class PageControl{
       }
 
       showLoginPageAfterCheck(){
-        let uname = this.getCookie("username");
-        let accounttype = this.getCookie("accounttype"); 
-        // alert(uname);
-        if(uname === ''){
-            this.showLoginContent();
-        }else{
-            this.showMainContent();
-            if(accounttype === "admin"){
-                document.getElementById('addNewAddressLink').style.display = 'block';
-                document.getElementById('green_add_button').style.display = 'block';
+            let uname = this.getCookie("username");
+            let accounttype = this.getCookie("accounttype"); 
+            // alert(uname);
+            if(uname === ''){
+                this.showLoginContent();
             }else{
-                document.getElementById('addNewAddressLink').style.display = 'none';
-                document.getElementById('green_add_button').style.display = 'none';
+                this.showMainContent();
+                if(accounttype === "admin"){
+                    document.getElementById('addNewAddressLink').style.display = 'block';
+                    document.getElementById('green_add_button').style.display = 'block';
+                }else{
+                    document.getElementById('addNewAddressLink').style.display = 'none';
+                    document.getElementById('green_add_button').style.display = 'none';
+                }
             }
         }
-    }
 
-    toggleLoginLogoutButton(){
-        let uname = this.getCookie("username");
-        let accounttype = this.getCookie("accounttype"); 
-        let usl = new UserListHandler();
+        adminAccountIsInCookies(){
+            let uname = this.getCookie("username");
+            let accounttype = this.getCookie("accounttype"); 
 
-        // usl.deleteCookie();
-        if(!(uname === '') && !(accounttype === '')){
-            document.getElementById('loginLink').style.color = "#00FF00";
-            // this.showMainContent();
-            alert("x");
-            // loginLink
-        }else{
-            alert("y");
-            document.getElementById('loginLink').style.color = "#00FFFF";
-            // this.showLoginContent();
-            
+            if(accounttype == 'admin'){
+
+                return true; 
+            }else{
+                return false; 
+            }
         }
-    }
+    // toggleLoginLogoutButton(){
+    //     let uname = this.getCookie("username");
+    //     let accounttype = this.getCookie("accounttype"); 
+    //     let usl = new UserListHandler();
+
+    //     // usl.deleteCookie();
+    //     if(!(uname === '') && !(accounttype === '')){
+    //         document.getElementById('loginLink').style.backgroundColor = "lawngreen";
+    //         document.getElementById('loginLink') = "Text"; 
+    //         // this.showMainContent();
+    //         // alert(uname + ' '  + accounttype);
+    //         // loginLink
+    //     }else{
+    //         // alert("y");
+    //         document.getElementById('loginLink').style.backgroundColor = "#ff3737";
+    //         document.getElementById('loginLink').innerHTML = "Text";
+    //         // document.getElementById("loginLink").innerHTML = "New text!";
+           
+    //         // this.showLoginContent();
+    //         // alert(uname + ' '  + accounttype);
+            
+    //     }
+    // }
 
 
     // checkContactAdd(){
@@ -210,11 +226,68 @@ document.getElementById("updateAddressLink").addEventListener("click", function(
 }); 
 // login_form_button
 document.getElementById("loginLink").addEventListener("click", function(){
+
     pageControl.showLoginContent();
     
-    pageControl.toggleLoginLogoutButton();
+    // pageControl.toggleLoginLogoutButton();
     // pageControl.showLoginPageAfterCheck();
 }); 
 
+//click on list
+document.getElementById("contactListContainer").addEventListener("click", function(e){
+    // alert( e.target.id );
+    let clh = new ContactListHandler();
+    let pc = new PageControl();
+
+
+    // alert(e.target.id); 
+    let contact = clh.getContactByID(e.target.id); 
+    // alert(contact.firstname); 
+    pageControl.showUpdateAddressesContent();
+
+    // document.getElementById("myText").disabled = true;
+
+    if(pc.adminAccountIsInCookies()){
+        document.getElementById("update_user_form_field_id").disabled = true;
+        document.getElementById("update_user_form_field_firstname").disabled = false;
+        document.getElementById("update_user_form_field_lastname").disabled = false;
+        document.getElementById("update_user_form_field_street").disabled = false;
+        document.getElementById("update_user_form_field_zipcode").disabled = false;
+        document.getElementById("update_user_form_field_city").disabled = false;
+        document.getElementById("update_user_form_field_country").disabled = false;
+        document.getElementById("update_user_form_field_private").disabled = false;
+        
+        document.getElementById("change_button").style.display = "block";
+        document.getElementById("delete_button").style.display = "block";
+
+    }else{
+        document.getElementById("update_user_form_field_id").disabled = true;
+        document.getElementById("update_user_form_field_firstname").disabled = true;
+        document.getElementById("update_user_form_field_lastname").disabled = true;
+        document.getElementById("update_user_form_field_street").disabled = true;
+        document.getElementById("update_user_form_field_zipcode").disabled = true;
+        document.getElementById("update_user_form_field_city").disabled = true;
+        document.getElementById("update_user_form_field_country").disabled = true;
+        document.getElementById("update_user_form_field_private").disabled = true;
+        document.getElementById("change_button").style.display = "none";
+        document.getElementById("delete_button").style.display = "none";
+    }
+    document.getElementById("update_user_form_field_id").value = contact.id;
+    document.getElementById("update_user_form_field_firstname").value = contact.firstname;
+    document.getElementById("update_user_form_field_lastname").value = contact.lastname;
+    document.getElementById("update_user_form_field_street").value = contact.street;
+    document.getElementById("update_user_form_field_zipcode").value = contact.zipcode;
+    document.getElementById("update_user_form_field_city").value = contact.city;
+    document.getElementById("update_user_form_field_country").value = contact.country;
+    document.getElementById("update_user_form_field_private").checked = contact.privateContact;
+
+    // if(typeof window.history.pushState == 'function') {
+    //     window.history.pushState({}, "Hide", "http://127.0.0.1:5500/adviz/src/");
+    // }
+    // pageControl.showUpdateAddressesContent();
+        
+    // pageControl.toggleLoginLogoutButton();
+    // pageControl.showLoginPageAfterCheck();
+},); 
 
 

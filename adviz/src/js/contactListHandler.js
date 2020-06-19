@@ -70,7 +70,8 @@ export class ContactListHandler{
         for (i = 0; i < jsonArrayList.length; i++){
             let jsonArrayObject = jsonArrayList[i];
             // alert("Fill: " + pc.getCookie("accounttype")); 
-            if(!(accounttype === "admin") && (jsonArrayObject.privateContact === "true")){
+
+            if(!(accounttype == "admin") && (jsonArrayObject.privateContact == true)){
                 continue; 
             }
             let contactTest = new Contact(jsonArrayObject.id, jsonArrayObject.firstname, jsonArrayObject.lastname, jsonArrayObject.street, jsonArrayObject.zipcode, jsonArrayObject.city, jsonArrayObject.country, jsonArrayObject.privateContact, jsonArrayObject.avatar);
@@ -145,6 +146,28 @@ export class ContactListHandler{
         return result; 
     }
 
+    getContactByID(id){
+        if(this.checkJSonArrayIsInStorage()){
+            this.initJSONStorage();
+            return null; 
+        }
+
+        let jsonArray = localStorage.getItem("ContactJSONArray");
+        let jsonArrayList = JSON.parse(jsonArray);
+
+        let i;
+
+        for(i = 0; i < jsonArrayList.length; i++){
+            
+            // alert(jsonArrayList[i].id + '=?' + id);
+            if(jsonArrayList[i].id == id){ 
+                let newContact = new Contact(jsonArrayList[i].id, jsonArrayList[i].firstname, jsonArrayList[i].lastname, jsonArrayList[i].street, jsonArrayList[i].zipcode, jsonArrayList[i].city, jsonArrayList[i].country, jsonArrayList[i].privateContact, jsonArrayList[i].avatar);
+                return  newContact; 
+            }
+        }
+
+        return null; 
+    }
 
     // fillContactList(userObject){
         
@@ -209,22 +232,30 @@ export class Contact{
     }
 
     getHTMLElement(){
+        let pContactBox = ""
+        if(this.privateContact == false ){
+            pContactBox = ""
+        }else{
+            pContactBox = "(Private)";
+        }
+
         let userElementContainerHTML =          
-        '<div class="userElementContainer">'+ 
-        '   <div class="marginContainer">'+
-        '       <div class="pictureContainer">'+
-        '           <img class="roundCornerPicture" src="' + this.avatar + '" alt="avatar" >'+
+        '<div id="' + this.id + '" class="userElementContainer">'+ 
+        '   <div id="' + this.id + '" class="marginContainer">'+
+        '       <div id="' + this.id + '" class="pictureContainer">'+
+        '           <img id="' + this.id + '" class="roundCornerPicture" src="' + this.avatar + '" alt="avatar" >'+
         '       </div>'+
-        '       <div class="userTextContainer">'+
-        '           <div class="userNameContainer">'+
-                    this.firstname + ' ' + this.lastname +
+        '       <div id="' + this.id + '" class="userTextContainer">'+
+        '           <div id="' + this.id + '" class="userNameContainer">'+
+                        pContactBox  + " " + this.firstname + ' ' + this.lastname +
         '           </div>'+
-        '           <div class="userAddressContainer">'+
+        '           <div id="' + this.id + '" class="userAddressContainer">'+
         this.street + ' - ' + this.zipcode + ' ' + this.city + ' - ' + this.country + 
         '           </div>'+
         '       </div>'+
         '   </div>'+
         '</div>';
+        
         return userElementContainerHTML; 
     }
 

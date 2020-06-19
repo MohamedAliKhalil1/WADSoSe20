@@ -25,8 +25,8 @@
             </div>
             <ul class="nav_bar_links" id="drop_down_click">
                 <li><a id="mainLink" class="Main" href="#mainContent">Main</a></li>
-                <li><a id="addNewAddressLink"  href="#">Add New Address</a></li>
-                <li><a id="updateAddressLink" href="#updateDeleteView">Update/Delete Address</a></li>
+                <li><a id="addNewAddressLink"  href="#addNewAddressContent">Add New Address</a></li>
+                <li><a id="updateAddressLink" href="#updateAddressesContent">Update/Delete Address</a></li>
                 <li id="loginLink" class="login"><a href="#loginContent">Login</a></li>
                 <!-- <li id="trigram" class="trigram"><a href="javascript:void(0)">&#9776;</a></li> -->
             </ul>
@@ -37,7 +37,7 @@
             <section id="mainContent" class="main">
               <h1>Main</h1>
               <div id="MapContactsContainer" class="MapContactsContainer">
-                <div id=contactListContainer class=contactListContainer >
+                <div id="contactListContainer" class="contactListContainer" >
 
                 </div>
 
@@ -48,7 +48,7 @@
               </div>
             </section>
           
-            <div id="addNewAddressContent" class="add_new_address">
+            <section id="addNewAddressContent" class="add_new_address">
               <h1>Add New Address</h1>
               <div id="add_new_user">
                 <form id="add_new_user_form" action="">
@@ -87,57 +87,62 @@
                     
                 </form>
             </div>
-            </div>
+            </section>
 
-            <div id="updateAddressesContent" class="update_address">
+            <section id="updateAddressesContent" class="update_address">
               <h1>Update/Delete Address</h1>
               <div id="add_new_user">
                 <form id="add_new_user_form" action="">
                     <div id="add_new_user_field_pair">
+                        <label class="font">ID</label>
+                        <input type="text" id="update_user_form_field_id" class="add_new_user_form_field" name="firstname" size="25" disabled required>
+                    </div>
+
+                    <div id="add_new_user_field_pair">
                         <label class="font">Firstname</label>
-                        <input type="text" id="add_new_user_form_field" name="firstname" class="add_new_user_form_field" size="25" required placeholder="John">
+                        <input type="text" id="update_user_form_field_firstname" name="firstname" class="add_new_user_form_field" size="25" required placeholder="John">
                     </div>
                     <div id="add_new_user_field_pair">
                         <label class="font">Lastname</label>
-                        <input type="text" id="add_new_user_form_field" name="lastname" class="add_new_user_form_field" size="25" required placeholder="Doe">
+                        <input type="text" id="update_user_form_field_lastname" name="lastname" class="add_new_user_form_field" size="25" required placeholder="Doe">
                     </div>
                     <div id="add_new_user_field_pair">
                         <label class="font">Street</label>
-                        <input type="text" id="add_new_user_form_field" name="street" class="add_new_user_form_field" size="25" required placeholder="Main Street 123">
+                        <input type="text" id="update_user_form_field_street" name="street" class="add_new_user_form_field" size="25" required placeholder="Main Street 123">
                     </div>
                     <div id="add_new_user_field_pair">
                         <label class="font">Zip Code</label>
-                        <input type="text" id="add_new_user_form_field" name="zipcode" class="add_new_user_form_field" size="25" required placeholder="12345">
+                        <input type="text" id="update_user_form_field_zipcode" name="zipcode" class="add_new_user_form_field" size="25" required placeholder="12345">
                     </div>
                     <div id="add_new_user_field_pair">
                         <label class="font">City</label>
-                        <input type="text" id="add_new_user_form_field" name="city" class="add_new_user_form_field" size="25" required placeholder="Anytown">
+                        <input type="text" id="update_user_form_field_city" name="city" class="add_new_user_form_field" size="25" required placeholder="Anytown">
                     </div>
                     <div id="add_new_user_field_pair">
                         <label class="font">Country</label>
-                        <input type="text" id="add_new_user_form_field" name="country" class="add_new_user_form_field" size="25" required placeholder="USA">
+                        <input type="text" id="update_user_form_field_country" name="country" class="add_new_user_form_field" size="25" required placeholder="USA">
                     </div>
                     <div id="add_new_user_field_pair">
                         <label class="font">Private</label>
-                        <div style="width: 319px;"><input type="checkbox" class="font" class="add_new_user_form_field" name="private"></div>
+                        <div style="width: 319px;"><input id="update_user_form_field_private"type="checkbox" class="font" class="add_new_user_form_field" name="private"></div>
                         
                     </div>
                     <div id="add_new_user_field_pair">
-                        <button class="blue_button">Change</button>
-                        <button class="red_button">Delete</button>
+                        <button id="change_button" class="blue_button">Change</button>
+                        <button id="delete_button" class="red_button">Delete</button>
 
                     </div>
                     
                 </form>
             </div>
-            </div>
+            </section>
           
 
             <section id="loginContent" class="login_page">
               <h1>Login</h1>
 
               
-              <div id="login_holder">
+              <div id="login_holder" >
                 <div id="login_err_msg_holder"><p id="err_msg">The username or password is incorrect.</p></div>
                 <form id="login_form" action="">
                     <input type="text" id="username_field" name="username" class="login_form_field" required placeholder="Username" >
