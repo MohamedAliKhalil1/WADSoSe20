@@ -74,6 +74,9 @@ body {
 
   nav .login {
     background-color: lawngreen;
+    border-radius: 7%;
+    width: 90px;
+    
 
   }
 
@@ -504,7 +507,7 @@ body {
 	align-items: center;	
 }
 
-#add_new_user_form_field {
+.add_new_user_form_field {
 	border: none;
 	border-bottom: 1px solid #dfcdcd;
 	font-family: "Montserrat", sans-serif;
@@ -560,9 +563,14 @@ body {
 }
 
 
+/* #mapid { height: 180px; } */
 
+/* NavBarButtons
+.addNewAddressLink{
+  display: none;
+} */
 
-
+/* #login_form_button */
 
 
 

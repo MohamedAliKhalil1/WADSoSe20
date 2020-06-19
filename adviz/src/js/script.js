@@ -4,125 +4,31 @@ import {ContactListHandler, Contact} from './contactListHandler.js';
 import {UserListHandler, User} from './userListHandler.js';
 
 
+document.getElementById('addNewAddressLink').style.display = 'none';
+let pc = new PageControl();
+let clh = new ContactListHandler();
+let contact0 = new Contact(0, "A", "B", "street", "zipcode", "city", "country", true, "img/avatar/avatar-1.png");
+let contact1 = new Contact(0, "C", "D", "street", "zipcode", "city", "country", false, "img/avatar/avatar-2.png");
+let contact2 = new Contact(0, "E", "F", "street", "zipcode", "city", "country", true, "img/avatar/avatar-3.png");
 
-// function showLoginPageAfterCheck(){
-//     let uname = this.getCookie("username"); 
-//     // alert(uname);
-//     if(uname === ''){
-//         this.showLoginContent();
-//     }else{
-//         this.showMainContent();
-//     }
-// }
+pc.showLoginPageAfterCheck();
 
-// showLoginPageAfterCheck();
-// let jsonObject = [
-//     {
-//         "id":         "0",
-//         "firstname":  "Mohamed",
-//         "lastname":   "Ali",
-//         "street":     "Spandauer Str. 123",
-//         "zipcode":    "13874",
-//         "city":       "Berlin",
-//         "country":    "Germany",
-//         "privateContact":    "false",
-//         "avatar":     "img/avatar/avatar.png"
-//     },
-//     {
-//         "id":         "1",
-//         "firstname":  "Aiman",
-//         "lastname":   "Abdou",
-//         "street":     "Spandauer Str. 123",
-//         "zipcode":    "13874",
-//         "city":       "Berlin",
-//         "country":    "Germany",
-//         "privateContact":    "false",
-//         "avatar":     "img/avatar/avatar-1.png"
-//     },
-//     {
-//         "id":         "2",
-//         "firstname":  "Aiman",
-//         "lastname":   "Abdou",
-//         "street":     "Spandauer Str. 123",
-//         "zipcode":    "13874",
-//         "city":       "Berlin",
-//         "country":    "Germany",
-//         "privateContact":    "false",
-//         "avatar":     "img/avatar/avatar-2.png"
-//     },
-//     {   
-//         "id":         "3",
-//         "firstname":  "Aiman",
-//         "lastname":   "Abdou",
-//         "street":     "Spandauer Str. 123",
-//         "zipcode":    "13874",
-//         "city":       "Berlin",
-//         "country":    "Germany",
-//         "privateContact":    "false",
-//         "avatar":     "img/avatar/avatar-3.png"
-//     },
-//     {   
-//         "id":         "4",
-//         "firstname":  "Aiman",
-//         "lastname":   "Abdou",
-//         "street":     "Spandauer Str. 123",
-//         "zipcode":    "13874",
-//         "city":       "Berlin",
-//         "country":    "Germany",
-//         "privateContact":    "false",
-//         "avatar":     "img/avatar/avatar-4.png"
-//     },
-//     {
-//         "id":         "5",
-//         "firstname":  "Aiman",
-//         "lastname":   "Abdou",
-//         "street":     "Spandauer Str. 123",
-//         "zipcode":    "13874",
-//         "city":       "Berlin",
-//         "country":    "Germany",
-//         "privateContact":    "false",
-//         "avatar":     "img/avatar/avatar-5.png"
-//     }
-// ];
+// alert(jsonArray);
+clh.initJSONStorage();
+clh.addContactToStorage(contact0);
+clh.addContactToStorage(contact1);
+clh.addContactToStorage(contact2);
+let jsonArray = localStorage.getItem("ContactJSONArray");
 
-// // let users = [ 
-// //     {
-// //         "id":         "0",
-// //         "username": "admin",
-// //         "password": "abcde",
-// //         "accounttype": "admin"
-// //     },
-// //     {
-// //         "id":         "1",
-// //         "username": "normalo",
-// //         "password": "12345",
-// //         "accounttype": "standard"
-// //     }
+alert(jsonArray);
 
-// //     ];
-
-// let jsonArrayObejt = jsonObject[0];
-// let contactTest = new Contact(jsonArrayObejt.id, jsonArrayObejt.firstname, jsonArrayObejt.lastname, jsonArrayObejt.street, jsonArrayObejt.zipcode, jsonArrayObejt.city, jsonArrayObejt.country, jsonArrayObejt.privateContact, jsonArrayObejt.avatar);
-// let userTest = new User(0, "admin", "qwerty", "admin");
+        // if(jsonArray !== null){
+        //     alert("Not available"); 
+        // }else{
+        //     alert("List available");
+        // }
 
 
-// let clh = new ContactListHandler();
-// clh.fillContactList(userTest);
-
-
-// let i;
-// let contactList; 
-// contactList = contactTest.getHTMLElement(); 
-
-// for (i = 0; i < jsonObject.length; i++){
-//     let jsonArrayObejt = jsonObject[i];
-//     let contactTest = new Contact(jsonArrayObejt.id, jsonArrayObejt.firstname, jsonArrayObejt.lastname, jsonArrayObejt.street, jsonArrayObejt.zipcode, jsonArrayObejt.city, jsonArrayObejt.country, jsonArrayObejt.privateContact, jsonArrayObejt.avatar)
-
-//     document.getElementById("contactListContainer").innerHTML +=  contactTest.getHTMLElement();
-
-// }
-
-// $('#password_field')[0].checkValidity();
 document.getElementById("login_form_button").addEventListener("click", 
     function(){
 
@@ -130,6 +36,29 @@ document.getElementById("login_form_button").addEventListener("click",
         let userAccountControll = new UserListHandler();
 
         userAccountControll.checkUserCredentials();
+    }
+);
+
+document.getElementById("green_add_button").addEventListener("click", 
+    function(){
+
+        // // document.getElementsByName("login_form_button")[0].type = "button";
+        // let userAccountControll = new UserListHandler();
+
+        // userAccountControll.checkUserCredentials();
+        let firstname = document.getElementById("add_new_user_form_field_firstname").value;
+        let lastname = document.getElementById("add_new_user_form_field_lastname").value;
+        let street = document.getElementById("add_new_user_form_field_street").value;
+        let zipcode = document.getElementById("add_new_user_form_field_zipcode").value;
+        let city = document.getElementById("add_new_user_form_field_city").value;
+        let country = document.getElementById("add_new_user_form_field_country").value;
+        let privateContact = document.getElementById("add_new_user_form_field_private").checked;
+        
+        let newContact = new Contact(0, firstname, lastname, street, zipcode, city, country, privateContact, "img/avatar/avatar-1.png");
+        newContact.showUser();
+        
+        //alert(firstname + ' ' + lastname + ' ' +street + ' ' + zipcode + ' ' + city + ' ' + country + ' : '+privateContact);
+
     }
 );
 

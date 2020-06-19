@@ -36,15 +36,39 @@ export class ContactListHandler{
 
     }
 
-    fillContactList(){
+    // fillContactList(){
         
+    //     let pc = new PageControl();
+    //     // alert("Fill: " + pc.getCookie("accounttype")); 
+    //     let accounttype = pc.getCookie("accounttype");
+        
+    //     let i;
+    //     for (i = 0; i < jsonContacts.length; i++){
+    //         let jsonArrayObject = jsonContacts[i];
+    //         // alert("Fill: " + pc.getCookie("accounttype")); 
+    //         if(!(accounttype === "admin") && (jsonArrayObject.privateContact === "true")){
+    //             continue; 
+    //         }
+    //         let contactTest = new Contact(jsonArrayObject.id, jsonArrayObject.firstname, jsonArrayObject.lastname, jsonArrayObject.street, jsonArrayObject.zipcode, jsonArrayObject.city, jsonArrayObject.country, jsonArrayObject.privateContact, jsonArrayObject.avatar);
+    //         document.getElementById("contactListContainer").innerHTML +=  contactTest.getHTMLElement();
+            
+    //     }  
+    // }
+
+    fillContactList(){
+        if(this.checkJSonArrayIsInStorage()){
+            this.initJSONStorage();
+        }
+        let jsonArray = localStorage.getItem("ContactJSONArray");
+        let jsonArrayList = JSON.parse(jsonArray);
         let pc = new PageControl();
         // alert("Fill: " + pc.getCookie("accounttype")); 
         let accounttype = pc.getCookie("accounttype");
         
+        document.getElementById("contactListContainer").innerHTML = "";
         let i;
-        for (i = 0; i < jsonContacts.length; i++){
-            let jsonArrayObject = jsonContacts[i];
+        for (i = 0; i < jsonArrayList.length; i++){
+            let jsonArrayObject = jsonArrayList[i];
             // alert("Fill: " + pc.getCookie("accounttype")); 
             if(!(accounttype === "admin") && (jsonArrayObject.privateContact === "true")){
                 continue; 
@@ -54,6 +78,73 @@ export class ContactListHandler{
             
         }  
     }
+
+    initJSONStorage(){
+        let emtpyJSONArray = []; 
+        
+        localStorage.setItem("ContactJSONArray", JSON.stringify(emtpyJSONArray));
+    }
+
+    addContactToStorage(contact){
+        if(this.checkJSonArrayIsInStorage()){
+            this.initJSONStorage();
+        }
+        
+        let jsonArray = localStorage.getItem("ContactJSONArray");
+        let jsonArrayList = JSON.parse(jsonArray);
+        contact.id = this.getHighestIDNumberFromArray(jsonArrayList);
+        
+        let contactJSON = contact.getJSON();
+        
+        jsonArrayList.push(contactJSON);
+
+        localStorage.setItem("ContactJSONArray", JSON.stringify(jsonArrayList));
+        // let JSON
+    }
+
+    checkJSonArrayIsInStorage(){
+        let jsonArray = localStorage.getItem("ContactJSONArray");
+        if(jsonArray === null){
+            return true; 
+        }else{
+            return false; 
+        }
+        // return boolean
+    }
+
+    getContactFromStorage(position){
+        let jsonArray = localStorage.getItem("ContactJSONArray");
+        let newContact = JSONToContact(jsonArray[position]);
+
+        return newContact;
+    }
+
+    JSONToContact(jsonContact){
+
+        let newContact = new Contact(jsonContact.id, jsonContact.firstname, jsonContact.lastname, jsonContact.street, jsonContact.zipcode, jsonContact.city, jsonContact.country, jsonContact.privateContact, jsonContact.avatar);
+        
+        return newContact;
+    }
+
+    getHighestIDNumberFromArray(contactArray){
+        let i;
+        let result = 0;
+
+        for(i = 0; i < contactArray.length; i++){
+            
+            
+            if(contactArray[i].id > result){
+                result = contactArray[i].id; 
+            }
+        }
+
+        if(result >= 0){
+            result++; 
+        }
+
+        return result; 
+    }
+
 
     // fillContactList(userObject){
         
@@ -112,7 +203,7 @@ export class Contact{
             this.zipcode + '\n' + 
             this.city + '\n' + 
             this.country + '\n' + 
-            this.private + '\n' +  
+            this.privateContact + '\n' +  
             this.avatar + '\n'
             );
     }
@@ -136,6 +227,25 @@ export class Contact{
         '</div>';
         return userElementContainerHTML; 
     }
+
+    getJSON(){
+            
+        let jsonObject = {
+            "id":         this.id,
+            "firstname":  this.firstname,
+            "lastname":   this.lastname,
+            "street":     this.street,
+            "zipcode":    this.zipcode,
+            "city":       this.city,
+            "country":    this.country,
+            "privateContact":    this.privateContact,
+            "avatar":     this.avatar
+        }; 
+
+         return jsonObject;
+    }
+
+
 
 }
 

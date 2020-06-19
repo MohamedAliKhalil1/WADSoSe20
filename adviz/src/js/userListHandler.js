@@ -23,11 +23,11 @@ export class UserListHandler{
                 correctUser = true;
                 user = new User(jsonArrayUsers.id, jsonArrayUsers.username, jsonArrayUsers.password, jsonArrayUsers.accounttype); 
                 // user.showUser();
-                alert("Cookie: " + document.cookie); 
+                // alert("Cookie: " + document.cookie); 
                 user.createCookie();
                 // user.showUser();
                 // alert("Cookie: " + pageControl.getCookie("username")); 
-                alert("Cookie: " + document.cookie); 
+                // alert("Cookie: " + document.cookie); 
                 break;
             }else {
                 correctUser = false; 
@@ -45,6 +45,13 @@ export class UserListHandler{
         }
 
         return user; 
+    }
+
+    deleteCookie(){
+        // document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "id=;"; 
+        document.cookie = "username=;"; 
+        document.cookie = "accounttype=;"; 
     }
 
 }

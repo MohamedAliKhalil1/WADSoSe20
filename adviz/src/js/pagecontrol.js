@@ -101,7 +101,88 @@ export class PageControl{
         return "";
       }
 
-    
+      showLoginPageAfterCheck(){
+        let uname = this.getCookie("username");
+        let accounttype = this.getCookie("accounttype"); 
+        // alert(uname);
+        if(uname === ''){
+            this.showLoginContent();
+        }else{
+            this.showMainContent();
+            if(accounttype === "admin"){
+                document.getElementById('addNewAddressLink').style.display = 'block';
+                document.getElementById('green_add_button').style.display = 'block';
+            }else{
+                document.getElementById('addNewAddressLink').style.display = 'none';
+                document.getElementById('green_add_button').style.display = 'none';
+            }
+        }
+    }
+
+    toggleLoginLogoutButton(){
+        let uname = this.getCookie("username");
+        let accounttype = this.getCookie("accounttype"); 
+        let usl = new UserListHandler();
+
+        // usl.deleteCookie();
+        if(!(uname === '') && !(accounttype === '')){
+            document.getElementById('loginLink').style.color = "#00FF00";
+            // this.showMainContent();
+            alert("x");
+            // loginLink
+        }else{
+            alert("y");
+            document.getElementById('loginLink').style.color = "#00FFFF";
+            // this.showLoginContent();
+            
+        }
+    }
+
+
+    // checkContactAdd(){
+        
+    //     let username = document.getElementById("username_field").value;
+    //     let password = document.getElementById("password_field").value;
+
+    //     let correctUser = false;
+    //     let user = null;
+    //     let pageControl = new PageControl();
+        
+    //     for (let i = 0; i < users.length; i++){
+    //         let jsonArrayUsers = users[i];
+            
+        
+    //         if((username === jsonArrayUsers.username) && (password === jsonArrayUsers.password)){
+    //             // alert("Login correct. ");
+    //             correctUser = true;
+    //             user = new User(jsonArrayUsers.id, jsonArrayUsers.username, jsonArrayUsers.password, jsonArrayUsers.accounttype); 
+    //             // user.showUser();
+    //             // alert("Cookie: " + document.cookie); 
+    //             user.createCookie();
+    //             // user.showUser();
+    //             // alert("Cookie: " + pageControl.getCookie("username")); 
+    //             // alert("Cookie: " + document.cookie); 
+    //             break;
+    //         }else {
+    //             correctUser = false; 
+    //             // alert("Incorrect! ");
+    //         }
+        
+            
+    //     }
+
+    //     if(correctUser){
+    //         pageControl.showMainContent();
+    //         pageControl.jumpToAnchor("mainContent");
+    //     }else{
+    //         //Wrong Password text. id=err_msg
+    //     }
+
+    //     return user; 
+    // }
+
+
+
 }
 
 /**
@@ -113,22 +194,27 @@ document.getElementById("addNewAddressLink").addEventListener("click", function(
     pageControl.showAddNewAddressContent();
     
     
+    
 }); 
 
 document.getElementById("mainLink").addEventListener("click", function(){
     pageControl.showMainContent();
     // jumpToAnchor("mainContent");
-    
+    // pageControl.showLoginPageAfterCheck();
     
 }); 
 
 document.getElementById("updateAddressLink").addEventListener("click", function(){
     pageControl.showUpdateAddressesContent();
-    
+    // pageControl.showLoginPageAfterCheck();
 }); 
-
+// login_form_button
 document.getElementById("loginLink").addEventListener("click", function(){
     pageControl.showLoginContent();
     
+    pageControl.toggleLoginLogoutButton();
+    // pageControl.showLoginPageAfterCheck();
 }); 
+
+
 
