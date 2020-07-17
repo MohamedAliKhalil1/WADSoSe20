@@ -1,11 +1,20 @@
 {
   "name": "adviz",
   "version": "1.0.0",
-  "description": "",
+  "private": true,
+  "description": "Web Development course",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Aiman Ibrahim Abdou and  Mohamed Ali Khalil",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "repository": {
+    "private": true
+  }
 }

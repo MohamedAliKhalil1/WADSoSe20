@@ -31,7 +31,7 @@ export class PageControl{
         // alert("show Main is called!");
         this.disableAllPages();  
         document.getElementById('mainContent').style.display = 'block';
-
+        let pageControl = new PageControl();
         // let user = new User(0, "admin", "qwerty", "admin");
         let clh = new ContactListHandler();
 
@@ -39,7 +39,32 @@ export class PageControl{
         // let x = null; 
         // clh.fillContactList(user);
         clh.fillContactList();
-        
+
+        // let pageControl = new PageControl();
+
+        let username = this.getCookie("username");
+        let accounttype = this.getCookie("accounttype"); 
+        let firstname = this.getCookie("firstname");
+        let lastname = this.getCookie("lastname");
+
+        if(
+            (username != '') &&
+            (accounttype != '') &&
+            (this.getCookie('logintext') === 'true')
+        ){
+            //alert("Value: "+ this.getCookie('logintext'));
+            
+            let newAccounttype = accounttype; 
+            
+            if(accounttype == 'standard'){
+                newAccounttype = "nicht-admin";
+            }else if (accounttype == 'admin'){
+                newAccounttype = "admin";
+            }
+            alert("Hallo "+ firstname + " " + lastname +", Sie sind als „" +newAccounttype+ "“ eingeloggt.");
+            document.cookie = "logintext=" + 'false' + ";"; 
+            document.cookie = "logouttext=" + 'true' + ";";
+        }
     }
 
     /**
@@ -79,6 +104,10 @@ export class PageControl{
         this.url = location.href;               //Save down the URL without hash.
         location.href = "#"+h;                 //Go to the target element.
         // history.replaceState(null,null,url);   //Don't like hashes. Changing it back.
+
+        // document.getElementById("MapContactsContainer").style.display = "block";
+
+        
     }
 
     resetURL(){
@@ -207,7 +236,7 @@ export class PageControl{
  * Page Link Listeners
  */
 let pageControl = new PageControl();
-
+let userCookie = new User();
 document.getElementById("addNewAddressLink").addEventListener("click", function(){
     pageControl.showAddNewAddressContent();
     
@@ -228,6 +257,27 @@ document.getElementById("updateAddressLink").addEventListener("click", function(
 }); 
 // login_form_button
 document.getElementById("loginLink").addEventListener("click", function(){
+    let username = pageControl.getCookie("username");
+    let accounttype = pageControl.getCookie("accounttype"); 
+
+    
+
+    if(
+        (username != '') &&
+        (accounttype != '') &&
+        (document.getElementById("loginlogouttext").innerHTML === "Logout")
+    ){
+        userCookie.deleteCookie();
+        // document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        // document.cookie = "accounttype=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        //document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+        document.getElementById("loginlogouttext").innerHTML = "Login";
+        // document.getElementById("err_msg").style.color = "red";
+        
+        location.reload(); 
+
+        
+    }
 
     pageControl.showLoginContent();
     

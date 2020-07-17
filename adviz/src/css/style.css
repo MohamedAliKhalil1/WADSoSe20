@@ -76,9 +76,13 @@ body {
   nav .login {
     background-color: lawngreen;
     border-radius: 7%;
-    width: 90px;
+    width: auto;
     
 
+  }
+
+  .messageLog{
+    display: none;
   }
 
   .contactListContainer{

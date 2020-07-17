@@ -21,7 +21,7 @@ export class UserListHandler{
             if((username === jsonArrayUsers.username) && (password === jsonArrayUsers.password)){
                 // alert("Login correct. ");
                 correctUser = true;
-                user = new User(jsonArrayUsers.id, jsonArrayUsers.username, jsonArrayUsers.password, jsonArrayUsers.accounttype); 
+                user = new User(jsonArrayUsers.id, jsonArrayUsers.username, jsonArrayUsers.password, jsonArrayUsers.accounttype, jsonArrayUsers.firstname, jsonArrayUsers.lastname); 
                 // user.showUser();
                 // alert("Cookie: " + document.cookie); 
                 user.createCookie();
@@ -42,11 +42,13 @@ export class UserListHandler{
             pageControl.showMainContent();
             pageControl.jumpToAnchor("mainContent");
             document.getElementById("err_msg").style.display = "none";
+            // document.getElementById("MapContactsContainer").style.display = "block";
             document.cookie = "wrongpw=false;"; 
         }else{
             document.cookie = "wrongpw=true;"; 
             // Wrong Password text. id=err_msg
             document.getElementById("err_msg").style.display = "block";
+            // document.getElementById("MapContactsContainer").style.display = "none";
         }
 
         return user; 
@@ -65,11 +67,13 @@ export class UserListHandler{
 
 export class User{
 
-    constructor(id, username, password, accounttype){
+    constructor(id, username, password, accounttype, firstname, lastname){
         this.id = id;
         this.username = username;
         this.password = password;
         this.accounttype = accounttype;
+        this.firstname = firstname;
+        this.lastname = lastname; 
         
         // this.avatar = avatar; 
     }
@@ -81,7 +85,11 @@ export class User{
             this.id + '\n' +
             this.username  + '\n' +
             this.password  + '\n' +
-            this.accounttype  + '\n'
+            this.accounttype  + '\n' +
+            this.firstname  + '\n' +
+            this.lastname  + '\n' +
+            this.litxt  + '\n' +
+            this.lotxt  + '\n' 
             // this.avatar  + '\n' 
             );
     }
@@ -95,6 +103,10 @@ export class User{
         document.cookie = "id=" + this.id + ";"; 
         document.cookie = "username=" + this.username + ";"; 
         document.cookie = "accounttype=" + this.accounttype + ";"; 
+        document.cookie = "firstname=" + this.firstname + ";"; 
+        document.cookie = "lastname=" + this.lastname + ";"; 
+        document.cookie = "logintext=" + 'true' + ";"; 
+        document.cookie = "logouttext=" + 'true' + ";"; 
         
     }
 
@@ -102,7 +114,11 @@ export class User{
         // document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         document.cookie = "id=;"; 
         document.cookie = "username=;"; 
-        document.cookie = "accounttype=;"; 
+        document.cookie = "accounttype=;";
+        document.cookie = "firstname=;"; 
+        document.cookie = "lastname=;"; 
+        document.cookie = "logintext=true;"; 
+        document.cookie = "logouttext=true;"; 
     }
     
     
@@ -117,25 +133,33 @@ let users = [
         "id":         "0",
         "username": "admin",
         "password": "abcde",
-        "accounttype": "admin"
+        "accounttype": "admin",
+        "firstname": "John",
+        "lastname": "Doe"
     },
     {
         "id":         "2",
         "username": "aiman",
         "password": "abcde",
-        "accounttype": "admin"
+        "accounttype": "standard",
+        "firstname": "Aiman",
+        "lastname": "Abdou"
     },
     {
         "id":         "3",
-        "username": "ABC",
+        "username": "mohamed",
         "password": "abcde",
-        "accounttype": "standard"
+        "accounttype": "standard",
+        "firstname": "Mohamed",
+        "lastname": "Ali"
     },
     {
         "id":         "1",
         "username": "normalo",
-        "password": "12345",
-        "accounttype": "standard"
+        "password": "abcde",
+        "accounttype": "standard",
+        "firstname": "Jane",
+        "lastname": "Doe"
     }
 
     ];

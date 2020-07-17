@@ -29,14 +29,17 @@
                 <li><a id="mainLink" class="Main" href="#mainContent">Main</a></li>
                 <li><a id="addNewAddressLink"  href="#addNewAddressContent">Add New Address</a></li>
                 <li><a id="updateAddressLink" href="#updateAddressesContent">Update/Delete Address</a></li>
-                <li id="loginLink" class="login"><a href="#loginContent">Login</a></li>
+                <li id="loginLink" class="login"><a id="loginlogouttext" href="#loginContent">Login</a></li>
             </ul>
         </nav>
-
+        
           <div class="right_base_page">
-
+            <div id="helloworldcontainer"></div>
+            
             <section id="mainContent" class="main">
               <h1>Main</h1>
+              <div id="loginerrormessage" class="messageLog" >Please Log in first</div>
+
               <div id="MapContactsContainer" class="MapContactsContainer">
                 <div id="contactListContainer" class="contactListContainer" >
 
@@ -48,7 +51,7 @@
                 
               </div>
             </section>
-          
+            
             <section id="addNewAddressContent" class="add_new_address">
               <h1>Add New Address</h1>
               <div id="add_new_user">
@@ -167,6 +170,8 @@
       </div>
           
 
-      
+        <!-- ... other HTML ... -->
+
+
     </body>
 </html>

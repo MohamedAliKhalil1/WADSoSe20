@@ -3,11 +3,52 @@ import {PageControl} from './pagecontrol.js';
 import {ContactListHandler, Contact} from './contactListHandler.js';
 import {UserListHandler, User} from './userListHandler.js';
 import {mapHandler} from './map.js';
+// import {databaseConnector} from './database.js';
 
+
+
+// let db = new databaseConnector();
+
+// db.connectToDB();
+// const domContainer = document.querySelector('#helloworldcontainer');ReactDOM.render(e(LikeButton), domContainer);
 
 let pc = new PageControl();
 let clh = new ContactListHandler();
 let mapObject = new mapHandler();
+
+
+let username = pc.getCookie("username");
+let accounttype = pc.getCookie("accounttype"); 
+
+// document.getElementById("loginLink").value = "TEST";
+
+if(
+    (username != '') &&
+    (accounttype != '')
+){
+    // alert("User is logged in: (" + username + ")");
+    document.getElementById("loginlogouttext").innerHTML = "Logout";
+    
+    document.getElementById("loginLink").style.backgroundColor = "red";
+}else{
+    document.getElementById("loginlogouttext").innerHTML = "Login";
+    document.getElementById("loginLink").style.backgroundColor = "lawngreen";
+}
+
+
+if(
+    (username == '') &&
+    (accounttype == '')
+){
+    document.getElementById("MapContactsContainer").style.display = "none";
+    document.getElementById("loginerrormessage").style.display = "block";
+    // document.getElementById("loginerrormessage").style.display = "block";
+    
+}
+
+
+
+
 
 
 if(pc.getCookie("wrongpw") == "true"){
@@ -41,8 +82,43 @@ let jsonArray = localStorage.getItem("ContactJSONArray");
 
 document.getElementById("login_form_button").addEventListener("click", 
     function(){
+        // alert
+    let pageControl = new PageControl();
+    let ulh = new UserListHandler();
 
-        let ulh = new UserListHandler();
+
+    let username = pageControl.getCookie("username");
+    let accounttype = pageControl.getCookie("accounttype"); 
+    let firstname = pageControl.getCookie("firstname");
+    let lastname = pageControl.getCookie("lastname");
+    
+
+    if(
+        (username != '') &&
+        (accounttype != '')
+    ){
+        userCookie.deleteCookie();
+
+        // document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        // document.cookie = "accounttype=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        //document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+        // alert("Logout");
+        document.getElementById("loginlogouttext").innerHTML = "Login";
+        // document.getElementById("err_msg").style.color = "red";
+        // document.cookie = "logintext=" + 'false' + ";";
+        // document.cookie = "logouttext=" + 'false' + ";";
+        location.reload(); 
+    }else{
+        
+        document.cookie = "logintext=" + 'true' + ";";
+        document.cookie = "logouttext=" + 'true' + ";";
+        
+        // alert('test');
+        document.getElementById("loginlogouttext").innerHTML = "Logout";
+        location.reload();
+
+    }
+
 
         // if(ulh.checkUserCredentials() == null){
         //     // document.getElementById("update_user_form_field_id").disabled = true;
@@ -72,6 +148,8 @@ document.getElementById("login_form_button").addEventListener("click",
         // }
         ulh.checkUserCredentials();
 
+
+        
 
 
 
